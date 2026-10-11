@@ -520,9 +520,6 @@ window.DANTE_DATA = {
   "finishText": "[Kde se týmy sejdou na vyhodnocení]",
   "cards": [
     {
-      "card": "chvilka-filosofie"
-    },
-    {
       "card": "byt-ci-nebyt"
     },
     {
