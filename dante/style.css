@@ -97,7 +97,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .gcard { position: relative; display: block; aspect-ratio: 3 / 4; border: 0; padding: 0; border-radius: 8px; background: var(--bg); box-shadow: inset 0 0 0 1px rgba(0,0,0,.5), inset 0 0 28px rgba(0,0,0,.55), 0 2px 0 #0a0705, 0 6px 14px rgba(0,0,0,.45); cursor: pointer; }
 .gcard .fr1 { inset: 6px; border: 1px solid var(--rule); } .gcard .fr2 { inset: 9px; border: 1px solid var(--rule2); border-radius: 3px; }
 .gn { position: absolute; font-family: 'Cinzel', serif; font-weight: 700; font-size: 12px; letter-spacing: .04em; color: var(--ink); }
-.gn-tl { top: 14px; left: 15px; } .gn-br { bottom: 14px; right: 15px; transform: rotate(180deg); }
+.gn-tl { top: 14px; left: 15px; } .gn-br { bottom: 14px; right: 15px; }
 .g-oval { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 66%; height: 64%; border-radius: 50%; border: 1px solid var(--rule); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--rule2); background: rgba(0,0,0,.2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px; text-align: center; }
 .g-title { font-weight: 600; font-size: 16px; line-height: 1.12; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .g-tlock { display: flex; align-items: center; gap: 4px; padding-top: 5px; border-top: 1px solid rgba(217,163,90,.4); font-family: 'Cinzel', serif; font-weight: 600; font-size: 11px; color: #d9a35a; }
@@ -118,7 +118,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .cover .fr2 { inset: 9px; border: 1px solid var(--rule2); border-radius: 5px; }
 .num { position: absolute; font-family: 'Cinzel', serif; font-weight: 700; font-size: 16px; color: var(--cink); background: none; border: 0; padding: 0; line-height: 1; }
 .num-tl { top: 13px; left: 17px; }
-.num-br { bottom: 13px; right: 17px; transform: rotate(180deg); cursor: default; z-index: 3; }
+.num-br { bottom: 13px; right: 17px; cursor: default; z-index: 3; }
 button.num-br { padding: 12px 14px; margin: -12px -14px; }
 .fl { position: absolute; line-height: 0; background: none; border: 0; padding: 0; }
 .fl-tl { top: 13px; left: 15px; } .fl-br { bottom: 13px; right: 15px; }
