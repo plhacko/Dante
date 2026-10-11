@@ -1,0 +1,41 @@
+{
+  "id": "pis-barde-skladej",
+  "title": "Piš barde skládej",
+  "content": [
+    {
+      "type": "quote",
+      "text": "PTÁČEK: No jo, to je on. Ale že já bych po něm pojmenoval důl? To je nesmysl! Ledaže by ho ode mne koupil. Ale že by mu ty básničky tak vynášely? Možné to je. Když bude mít dost peněz, klidně mu ho prodám. Piš, barde, střádej, a až budeš mít dvacet miliónů, přijde den, zúčtujem spolu.",
+      "source": "Posel z Liptákova, Jára Cimrman"
+    },
+    {
+      "type": "text",
+      "text": "Vyberte si písničku, která má alespoň tři sloky, a přepište ji do textboxu níže. Za každé slovo špatně ztrácíte jeden bod. Během plnění úkolu **nedohledávejte** text vámi zvolené písně."
+    }
+  ],
+  "kronika": {
+    "work": "Posel z Liptákova",
+    "decoys": [
+      "Dobytí severního pólu",
+      "Záskok"
+    ]
+  },
+  "task": {
+    "type": "submit",
+    "fields": [
+      {
+        "id": "song",
+        "label": "Název písně"
+      },
+      {
+        "id": "lyrics",
+        "label": "Text písně",
+        "multiline": true,
+        "placeholder": "Sem napište celý text písně (sloky oddělujte prázdnými řádky)…"
+      }
+    ]
+  },
+  "bonus": {
+    "max": 10,
+    "description": "za každé špatné slovo −1 · hodnotí pořadatel"
+  }
+}

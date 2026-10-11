@@ -1,0 +1,31 @@
+{
+  "id": "velmi-dobre",
+  "title": "Velmi dobré",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Bůh viděl všechno, co učinil, a hle, bylo to velmi dobré!",
+      "source": "Genesis 1,31, B21"
+    },
+    {
+      "type": "text",
+      "text": "Rozhlédněte se. Nejdřív se jako tým **shodněte, kterým směrem se díváte**: vyberte jeden výhled a ukažte si ho rukou.\n\nPak každý **sám a bez domlouvání** napíše **5 hezkých věcí**, které na tom výhledu vidí.\n\nAž budou mít všichni hotovo, přečtěte si seznamy nahlas. Za každou věc, kterou napsali aspoň dva z vás, je **1 bod**. Pokud ji napsali **úplně všichni**, jsou za ni **2 body**."
+    }
+  ],
+  "kronika": {
+    "work": "Genesis",
+    "decoys": [
+      "Exodus",
+      "Zjevení Janovo"
+    ]
+  },
+  "task": {
+    "type": "confirm",
+    "counter": {
+      "min": 0,
+      "max": 10,
+      "label": "Kolik bodů jste získali?",
+      "hint": "1 bod za shodu aspoň dvou, 2 body za shodu všech"
+    }
+  }
+}

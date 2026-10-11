@@ -1,0 +1,133 @@
+{
+  "id": "zluty",
+  "title": "Žlutý",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Zívnutí. Slovo buldozer bloudilo jeho myslí a hledalo, s čím by se mohlo spojit. Buldozer za kuchyňským oknem byl pořádný kousek. Civěl na něj. Žlutý, pomyslel si a odbelhal se do ložnice obléct. Cestou se zastavil v koupelně a vypil velkou sklenici vody a pak ještě jednu. Začínal se podezřívat, že má kocovinu. Ale proč? Copak včera večer pil? Došel k závěru, že nejspíš ano. Zahlédl cosi v holícím zrcátku. Žlutý, pomyslel si a belhal se do ložnice. ...\n\n... Prohlížel se v zrcadle na dveřích skříně. Vyplázl jazyk. Žlutý, pomyslel si. Slovo žlutý bloudilo jeho myslí a hledalo, s čím by se mohlo spojit. O patnáct vteřin později už byl venku a ležel před obrovským žlutým buldozerem, který se valil zahradní pěšinou.",
+      "source": "Douglas Adams, Stopařův průvodce po Galaxii, 1. kapitola"
+    },
+    {
+      "type": "text",
+      "text": "Slovo buldozer chvíli hledalo, s čím by se spojilo. Teď je řada na vás.\n\nVyberte rozhodčího a dejte mu telefon. Uvidí slovo a jeho výkladovou definici, nahlas ale přečte **jen definici**. Ostatní hádají slovo. Na začátku máte **42 vteřin** a za každé uhodnuté slovo dostanete **4,2 vteřiny** navíc.\n\nSlovo můžete kdykoli přeskočit, za přeskočené ale body nejsou. Rozhodčí nesmí slovo vyslovit ani ho ukazovat."
+    }
+  ],
+  "kronika": {
+    "work": "Stopařův průvodce po Galaxii",
+    "decoys": [
+      "Restaurant na konci vesmíru",
+      "Válka světů"
+    ]
+  },
+  "task": {
+    "type": "guess",
+    "seconds": 42,
+    "bonusSecondsPerCorrect": 4.2,
+    "pointsPerCorrect": 0.42,
+    "rounding": "round",
+    "words": [
+      {
+        "word": "Ručník",
+        "definition": "Kus savé tkaniny určený k osušení těla nebo rukou po umytí."
+      },
+      {
+        "word": "Buldozer",
+        "definition": "Těžký pásový stroj se širokou radlicí vpředu, sloužící k hrnutí a urovnávání zeminy."
+      },
+      {
+        "word": "Čaj",
+        "definition": "Nápoj připravený vyluhováním sušených lístků v horké vodě."
+      },
+      {
+        "word": "Delfín",
+        "definition": "Inteligentní mořský savec z řádu kytovců s protáhlým rypcem."
+      },
+      {
+        "word": "Myš",
+        "definition": "Drobný hlodavec s dlouhým holým ocáskem a s velkými boltci."
+      },
+      {
+        "word": "Velryba",
+        "definition": "Velký mořský savec dýchající vzduch nozdrami na temeni hlavy."
+      },
+      {
+        "word": "Stopař",
+        "definition": "Osoba, která cestuje tak, že zastavuje projíždějící vozidla a žádá o svezení."
+      },
+      {
+        "word": "Báseň",
+        "definition": "Literární útvar psaný ve verších, často rýmovaný."
+      },
+      {
+        "word": "Hospoda",
+        "definition": "Veřejný podnik, kde se čepuje pivo a podávají se nápoje a jídla."
+      },
+      {
+        "word": "Župan",
+        "definition": "Volný domácí oděv s páskem, nošený zejména po koupeli nebo ráno."
+      },
+      {
+        "word": "Dálniční obchvat",
+        "alsoAccept": [
+          "obchvat"
+        ],
+        "definition": "Rychlostní silnice vedená kolem města, aby dálková doprava nemusela projíždět jeho středem."
+      },
+      {
+        "word": "Panika",
+        "definition": "Náhlý silný strach, který vede k neuváženému a chaotickému jednání."
+      },
+      {
+        "word": "Encyklopedie",
+        "definition": "Rozsáhlé dílo podávající soustavný přehled lidského vědění, obvykle řazené abecedně."
+      },
+      {
+        "word": "Planeta",
+        "definition": "Velké nebeské těleso obíhající kolem hvězdy, které samo nesvítí."
+      },
+      {
+        "word": "Fjord",
+        "definition": "Úzký, hluboký mořský záliv se strmými břehy, vytvořený ledovcem."
+      },
+      {
+        "word": "Člověk",
+        "definition": "Forma života vzešlá z opic, tak úžasně primitivní, že se dosud domnívá, že digitální hodinky jsou docela šikovný nápad."
+      },
+      {
+        "word": "Pravděpodobnost",
+        "alsoAccept": [
+          "nepravděpodobnost"
+        ],
+        "definition": "Míra očekávání, že určitá událost nastane, vyjádřená číslem od nuly do jedné."
+      },
+      {
+        "word": "Maniodeprese",
+        "definition": "Duševní porucha, při níž se střídají období nadměrně povznesené nálady s obdobími hluboké skleslosti."
+      },
+      {
+        "word": "Žlutá",
+        "alsoAccept": [
+          "žlutý",
+          "žlutá barva"
+        ],
+        "definition": "Mající barvu jako síra, květy pampelišky, blatouchu a podobně."
+      },
+      {
+        "word": "42",
+        "alsoAccept": [
+          "čtyřicet dva",
+          "dvaačtyřicet"
+        ],
+        "definition": "Sudé přirozené číslo, součin čísel dvě, tři a sedm."
+      },
+      {
+        "word": "Zubní kartáček",
+        "alsoAccept": [
+          "kartáček",
+          "kartáček na zuby"
+        ],
+        "definition": "Drobná pomůcka se štětinami, určená k čištění chrupu."
+      }
+    ]
+  }
+}

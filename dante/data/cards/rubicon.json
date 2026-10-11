@@ -1,0 +1,26 @@
+{
+  "id": "rubicon",
+  "title": "Rubicon",
+  "content": [
+    {
+      "type": "quote",
+      "text": "**A:** Neoženíš se, jsi-li trochu při smyslech, a nezanecháš tohoto svého žití. Neboť já, jenž k tobě mluvím, oženil jsem se — proto ti radím: neber si ženu!\n**B:** Věc je rozhodnuta a usnesena. Ať jsou kostky vrženy!\n**A:** Nuž dobrá, jdi. Však dej ti nebe vyjít z toho zdráv.\nNa pravé moře nesnází se nyní vydáváš —\nne libyjské, ne egejské, ni sicilské,\nkde ze třiceti lodí tři se zachrání —\nžádný ženatý muž nebyl nikdy zachráněn!",
+      "source": "Menandros 342/41 – c. 290 BC"
+    },
+    {
+      "type": "text",
+      "text": "Caesar sice jen cituje Menandra, ale ==alea iacta est==, je čas překročit Rubikon, nebo spíše Botičský potok.\n\nVyberte mezi sebou Caesara, ten musí suchou nohou překročit potok, nesmí to však udělat po mostě.\n\n**NEBO**\n\nPokud je na vás voda moc studená, tak si alespoň upleťte vavřínový věnec z listí, který vámi zvolený Caesar musí nosit až do konce hry.\n\nFotky jsou vítány."
+    }
+  ],
+  "kronika": {
+    "work": "Ztracená hra od Menandra",
+    "decoys": [
+      "Král Oidipus",
+      "Antigona"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

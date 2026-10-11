@@ -1,0 +1,22 @@
+{
+  "id": "chvilka-filosofie",
+  "title": "Chvilka filosofie",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Něco skrýváme před cizinci, něco před přáteli a něco i sami před sebou. Co předstíráte, že o sobě nevíte?"
+    },
+    {
+      "type": "text",
+      "text": "Otázka je těžká, proto vezměte co největší kámen a vyneste ho až na vrcholek schodů, kámen pak vyfoťte a pošlete do skupiny."
+    }
+  ],
+  "task": {
+    "type": "confirm"
+  },
+  "points": 5,
+  "bonus": {
+    "max": 5,
+    "description": "pokud byl váš kámen největší"
+  }
+}

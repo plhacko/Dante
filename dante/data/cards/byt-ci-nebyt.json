@@ -1,0 +1,25 @@
+{
+  "id": "byt-ci-nebyt",
+  "title": "Být či nebýt",
+  "content": [
+    {
+      "type": "text",
+      "text": "Být či nebýt TO je oč tu běží. Nahrajte monolog Hamleta, prince dánského v tomto malém amfiteátru. Na konci pak otočte kameru na jásavé publikum.\n(Nebojte se použít telefonu coby lebky, monolog je to delší)"
+    },
+    {
+      "type": "quote",
+      "text": "Být nebo nebýt – to je otázka:\nje důstojnější zapřít se a snášet\nsurovost osudu a jeho rány,\nanebo se vzepřít moři trápení\na skoncovat to navždy?\n\nZemřít, spát – a je to.\nSpát – a navždy ukončit úzkost\na věčné útrapy a strázně,\nco údělem jsou těla –\nco si můžeme přát víc,\npo čem toužit?\n\n– Zemřít, spát – spát, možná snít –\na právě v tom je zrada.\nAž ztichne vřava pozemského bytí,\nve spánku smrti můžeme mít sny –\nto proto váháme a snášíme\ntu dlouhou bídu,\njiž se říká život.\n\nNeboť kdo vydržel by kopance\na výsměch doby,\naroganci mocných, průtahy soudů,\nznesvěcenou lásku, nadutost úřadů\na ústrky, co slušnost věčně sklízí\nod lumpů,\nkdyž pouhá dýka srovnala by účty,\na byl by klid?\n\nKdo chtěl by nést to břímě,\núpět a plahočit se životem,\nnemít strach z toho, co je za smrtí,\nz neznámé krajiny,\nz níž poutníci se nevracejí.\n\nTo nám láme vůli – snášíme radši\nhrůzy, které známe,\nnež abychom šli vstříc těm neznámým.\n\nTak svědomí z nás dělá zbabělce\na zdravá barva rozhodného činu\nse roznemůže zbledlou meditací,\nzáměry velké významem a vahou\nse odvracejí z vytčeného směru\na neuzrají v čin."
+    }
+  ],
+  "kronika": {
+    "work": "Hamlet",
+    "decoys": [
+      "Macbeth",
+      "Othello"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

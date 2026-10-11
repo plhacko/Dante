@@ -1,0 +1,58 @@
+{
+  "id": "mnichov-2026",
+  "listOrder": 2,
+  "title": "YMCA Prameny 2026 - Mnichov",
+  "place": "Mnichov",
+  "date": null,
+  "language": "cs",
+  "radius": 50,
+  "endsAt": "21:30",
+  "tracking": {
+    "ntfyTopic": "dante-mnichov-5157fd21ec7e",
+    "positionEveryMinutes": 5
+  },
+  "finishText": "[Kde se týmy sejdou na vyhodnocení]",
+  "cards": [
+    {
+      "card": "chvilka-filosofie"
+    },
+    {
+      "card": "byt-ci-nebyt"
+    },
+    {
+      "card": "cisarsky-poklad"
+    },
+    {
+      "card": "rubicon"
+    },
+    {
+      "card": "ve-zdravem-tele",
+      "from": "20:00"
+    },
+    {
+      "card": "maugli"
+    },
+    {
+      "card": "u-rek-babylonskych"
+    },
+    {
+      "card": "mind-meld"
+    },
+    {
+      "card": "pis-barde-skladej"
+    },
+    {
+      "card": "polyfemos"
+    },
+    {
+      "card": "zluty"
+    },
+    {
+      "card": "velmi-dobre"
+    },
+    {
+      "card": "zapis-do-kroniky",
+      "from": "21:00"
+    }
+  ]
+}
