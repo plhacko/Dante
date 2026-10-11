@@ -2,8 +2,8 @@
 import base64, functools, http.server, json, os, threading
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]          # repo root (serves /dante/...)
-DANTE = ROOT / 'dante'
+ROOT = Path(__file__).resolve().parents[1]          # repo root (served at /)
+DANTE = ROOT
 SHOTS = Path(os.environ.get('DANTE_SHOTS') or (DANTE / 'tests' / '_shots'))
 PNG1 = base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==')
 
@@ -122,7 +122,7 @@ class H:
     # --- navigation / state
     def open(self, now='19:00', hash='', extra=''):
         q = ('?now=%s' % now if now else '?x=1') + extra
-        self.page.goto('%s/dante/%s%s' % (self.base, q, hash))
+        self.page.goto('%s/%s%s' % (self.base, q, hash))
         self.page.wait_for_selector('[data-testid^=screen-]')
 
     def geo(self, ll, acc=10):
