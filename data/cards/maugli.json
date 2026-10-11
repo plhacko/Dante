@@ -1,0 +1,31 @@
+{
+  "id": "maugli",
+  "title": "Mauglí",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Džunglí Zákon, který nikdy ničeho nenařizuje bez důvodu, zapovídá všeliké zvěři jisti Člověka, vyjma ukazuje-li svým dětem, kterak zabíjet – a pak musí loviti mimo hranice lovišť své smečky nebo svého kmene. Pravým důvodem toho jest, že zabiti člověka znamená dříve či později příchod bílých lidí na slonech, s ručnicemi a sty hnědých mužů s gongy a raketami a pochodněmi. A pak trpí v džungli kde kdo. Avšak zvěř sama mezi sebou udává za důvod tohoto zákona, že je Člověk nejslabším a nejbezbrannějším ze všech živých tvorů, a že není důstojno sportovníka dotknouti.",
+      "source": "Rudyard Kipling, Kniha džunglí"
+    },
+    {
+      "type": "image",
+      "src": "assets/monkey-bars.png",
+      "alt": "Opičí hrazdy"
+    },
+    {
+      "type": "text",
+      "text": "Připravte se do džungle. Přeručkujte 20× opičí hrazdy tohohle hřiště (není potřeba, aby všichni přeručkovali stejně často)."
+    }
+  ],
+  "kronika": {
+    "work": "Kniha džunglí",
+    "decoys": [
+      "Tarzan",
+      "Lví král"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 8
+}

@@ -1,0 +1,18 @@
+{
+  "id": "ve-zdravem-tele",
+  "title": "Ve zdravém těle zdravý duch",
+  "content": [
+    {
+      "type": "text",
+      "text": "Ve zdravém těle zdravý lapiduch, ale rozumné sportování také nemůže být na škodu. Zahrajte si s ostatními týmy frisbee na 3 body. Týmy, které vyhrají, získávají 15 bodů, ostatní 7. Pokud přijde týmů licho, jeden se bude muset rozdělit a získá tak 10 bodů."
+    }
+  ],
+  "task": {
+    "type": "confirm",
+    "choices": [
+      7,
+      10,
+      15
+    ]
+  }
+}

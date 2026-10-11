@@ -1,0 +1,25 @@
+{
+  "id": "mind-meld",
+  "title": "Mind Meld",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "es7Br9kJBbo"
+    },
+    {
+      "type": "text",
+      "text": "Apollo-Soyuz jednoduchým podáním ruky propojilo dva téměř neslučitelné světy. Proto vy určete dvojici a propojte svoje mozky – oba pak vyřkněte najednou bez předchozí domluvy náhodné slovo, pokud se shodují (počítají se i synonyma), vyhráváte, jinak se pokuste nezávisle vymyslet slovo, které je mezi těmi předchozími dvěma. Slova se nesmí nikdy opakovat a v mezičase nesmíte naznačovat, co bude vaše další slovo."
+    }
+  ],
+  "kronika": {
+    "work": "Apollo-Sojuz",
+    "decoys": [
+      "Sputnik",
+      "Apollo 11"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 5
+}

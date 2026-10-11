@@ -1,193 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#1A1A2E">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Mládež 2026">
-  <link rel="manifest" href="manifest.json">
-  <title>Mládež 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=17">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dante</title>
+<meta name="theme-color" content="#15100c">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=UnifrakturMaguntia&amp;display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- ══════════════════════════════════════════════════
-       SCREEN: Úvod
-  ══════════════════════════════════════════════════ -->
-  <div id="screen-splash" class="screen">
-    <div class="splash-hero">
-      <div class="uno-card splash-card color-red">
-        <span class="corner tl">★</span>
-        <div class="card-oval splash-oval">
-          <div class="card-oval-inner">
-            <h1 class="splash-title">Mládež<br>2026</h1>
-          </div>
-        </div>
-        <span class="corner br">★</span>
-      </div>
-    </div>
-    <div class="splash-buttons">
-      <div class="splash-team-row">
-        <label for="team-name-input" class="splash-team-label">Název týmu</label>
-        <input id="team-name-input" type="text" class="splash-team-input" placeholder="Váš tým" autocomplete="off" maxlength="40">
-      </div>
-      <button id="btn-start" class="btn btn-red">Spustit hru</button>
-      <button id="btn-continue" class="btn btn-blue hidden">Pokračovat</button>
-      <button id="btn-new-game" class="btn btn-outline hidden">Nová hra</button>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       SCREEN: Přehled stanovišť
-  ══════════════════════════════════════════════════ -->
-  <div id="screen-overview" class="screen hidden">
-    <header class="app-header">
-      <span class="app-title">Mládež 2026</span>
-      <button id="btn-view-toggle" class="btn-view-toggle" title="Přepnout pohled">🗺</button>
-      <span id="progress-chip" class="progress-chip">0 / 10</span>
-    </header>
-    <div id="score-row" class="score-row">
-      <span id="pts-display">0 b.</span>
-      <span class="score-sep">|</span>
-      <span id="bonus-display">+0 bonus</span>
-    </div>
-    <div id="cards-grid" class="cards-grid"></div>
-    <div id="map-view" class="map-view hidden">
-      <div class="map-radar">
-        <span class="compass-label compass-n">S</span>
-        <span class="compass-label compass-s">J</span>
-        <span class="compass-label compass-e">V</span>
-        <span class="compass-label compass-w">Z</span>
-        <div class="radar-ring ring-outer"></div>
-        <div class="radar-ring ring-inner"></div>
-        <div class="radar-you">●</div>
-        <div class="map-zoom-controls">
-          <button class="zoom-btn" id="zoom-in">+</button>
-          <button class="zoom-btn" id="zoom-out">−</button>
-        </div>
-      </div>
-      <div id="map-filter" class="map-filter"></div>
-      <p id="map-hint" class="map-hint">Nejprve ověř svou polohu tlačítkem níže</p>
-      <div id="map-unknown-list" class="map-unknown-list"></div>
-    </div>
-    <div class="sticky-bar">
-      <button id="btn-check-location" class="btn btn-red full-width">
-        📍 Zkontrolovat moji polohu
-      </button>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════════════════
-       SCREEN: Detail stanoviště
-  ══════════════════════════════════════════════════ -->
-  <div id="screen-detail" class="screen hidden">
-    <div class="detail-wrapper">
-      <button id="btn-back" class="btn-back">← Zpět</button>
-      <div id="detail-card" class="uno-card detail-card color-red">
-        <span id="detail-corner-tl" class="corner tl">1</span>
-        <div class="card-oval detail-oval">
-          <div class="card-oval-inner">
-
-            <h3 id="detail-task-name" class="detail-task-name"></h3>
-
-            <div id="state-checking" class="detail-state">
-              <span class="state-icon">⏳</span>
-              <p class="state-text">Zjišťuji polohu…</p>
-            </div>
-
-            <div id="state-timelocked" class="detail-state hidden">
-              <span class="state-icon">⏰</span>
-              <p id="timelocked-text" class="state-text">Karta bude dostupná ve 20:00</p>
-              <button id="btn-timelock-retry" class="btn btn-dark">Zkusit znovu</button>
-            </div>
-
-            <div id="state-far" class="detail-state hidden">
-              <span class="state-icon">📍</span>
-              <p id="detail-distance-text" class="state-text">Nejsi na místě</p>
-              <button id="btn-retry" class="btn btn-dark">Zkusit znovu</button>
-            </div>
-
-            <div id="state-near" class="detail-state hidden">
-              <div id="near-video" class="geo-hunt-video"></div>
-              <div id="detail-task-text" class="task-text"></div>
-              <div id="point-picker" class="quiz-options"></div>
-              <button id="btn-complete" class="btn btn-green-solid">Označit jako splněné ✓</button>
-            </div>
-
-            <div id="state-quiz" class="detail-state hidden">
-              <div id="quiz-content"></div>
-            </div>
-
-            <div id="state-form" class="detail-state hidden">
-              <div id="form-content"></div>
-            </div>
-
-            <div id="state-geo-hunt" class="detail-state hidden">
-              <div id="geo-hunt-video" class="geo-hunt-video"></div>
-              <div id="geo-hunt-task" class="task-text"></div>
-              <button id="btn-geo-hunt-check" class="btn btn-dark">📍 Jsem tady!</button>
-              <p id="geo-hunt-hint" class="state-text hidden"></p>
-            </div>
-
-            <div id="state-done" class="detail-state hidden">
-              <span class="state-icon">✅</span>
-              <p class="state-text">Úkol splněn!</p>
-              <p id="state-done-pts" class="state-subtext"></p>
-              <p id="state-done-bonus" class="state-subtext state-bonus-hint"></p>
-              <p id="state-done-geoskip" class="state-subtext state-warn hidden">⚠ geolokace přeskočena</p>
-              <button id="btn-unreport" class="btn btn-outline hidden">↩ Zrušit splnění</button>
-              <button id="btn-back-done" class="btn btn-dark">← Zpět</button>
-            </div>
-
-            <div id="state-end" class="detail-state hidden">
-              <div id="end-before">
-                <span class="state-icon">⏳</span>
-                <p class="state-text">Neplecha bude ukončena v 21:30</p>
-                <button id="btn-end-early" class="btn btn-red" style="margin-top:16px">Ukončit neplechu</button>
-              </div>
-              <div id="end-after" class="hidden">
-                <div id="end-task-text"></div>
-                <button id="btn-end-compass" class="btn btn-blue" style="margin-top:12px">🧭 Ukázat na mapě</button>
-                <button id="btn-end-gps-check" class="btn btn-red" style="margin-top:8px">📍 Zkontrolovat polohu</button>
-              </div>
-            </div>
-
-            <div id="state-end-arrived" class="detail-state hidden">
-              <span class="state-icon">🎉</span>
-              <p class="state-text">Děkujeme za hraní!</p>
-              <p id="end-pts-summary" class="state-subtext"></p>
-              <p class="state-subtext">Tohle je konec hry. Na vyhodnocení počkejte na zahradě fary, až se vrátí všechny týmy.</p>
-            </div>
-
-          </div>
-        </div>
-        <span id="detail-corner-br" class="corner br">1</span>
-      </div>
-    </div>
-  </div>
-
-  <div id="confetti-container" class="confetti-container"></div>
-
-  <!-- ══════════════════════════════════════════════════
-       MODAL: Panel pořadatele
-  ══════════════════════════════════════════════════ -->
-  <div id="judge-modal" class="modal hidden">
-    <div class="modal-card">
-      <h3 class="modal-title">Panel pořadatele</h3>
-      <p class="modal-subtitle">Zadejte bonusové body za splněné úkoly</p>
-      <div id="judge-list" class="judge-list"></div>
-      <div class="modal-actions">
-        <button id="btn-judge-save" class="btn btn-green-solid">Uložit</button>
-        <button id="btn-judge-close" class="btn btn-outline">Zavřít</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="locations.js?v=17"></script>
-  <script src="app.js?v=17"></script>
+<div id="app" data-testid="app"></div>
+<div id="modal"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;color:#f1e6c8">Hra vyžaduje zapnutý JavaScript.</p></noscript>
+<script src="data.js"></script>
+<script src="js/util.js"></script>
+<script src="js/game.js"></script>
+<script src="js/render.js"></script>
+<script src="js/tracking.js"></script>
+<script src="js/app.js"></script>
+<script src="js/compass.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/kronika.js"></script>
 </body>
 </html>

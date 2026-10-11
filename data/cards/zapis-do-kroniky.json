@@ -1,0 +1,20 @@
+{
+  "id": "zapis-do-kroniky",
+  "title": "Zápis do kroniky",
+  "content": [
+    {
+      "type": "quote",
+      "text": "E quindi uscimmo a riveder le stelle.\n(A odtud jsme vyšli znovu uzřít hvězdy.)",
+      "source": "Dante, Peklo XXXIV"
+    },
+    {
+      "type": "text",
+      "text": "Vaše pouť dnes vedla přes mnoho stanovišť. Dojděte do cíle a než ji zapíšeme do kroniky, ukažte, co si z ní pamatujete: u každé karty vyberte, z jakého díla pochází její ukázka. Otázky se ukazují po jedné a odpověď už nejde vzít zpět."
+    }
+  ],
+  "task": {
+    "type": "finale",
+    "quiz": "kronika",
+    "pointsPerCorrect": 1
+  }
+}

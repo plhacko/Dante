@@ -1,0 +1,25 @@
+{
+  "id": "polyfemos",
+  "title": "Polyfémos",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Druzi ten z olivy kyj pak chopili, na konci ostrý, jemu jej do oka vbodli, já točil jím, svrchu oň opřen. Jako když lodní trám kdos vrtá, nebozez vezma, při čemž druhové jeho jím vespod za řemen točí, s obou jej chopíce stran — ten točí se stále a stále, tak tím řeřavým kyjem jsme točili v obrově oku, okolo něho pak krev, jak točil se, kroužila horká. (…) Zařval bolestí strašně, až kolem ječela skála. Hrůzou jsme skočili zpět, však Kyklóps ze svého oka vytrhl prudce ten kyj, jenž hojnou krví byl zbrocen, pryč jím od sebe mrštil, a mávaje rukama divě, křičel a Kyklopy volal, co kolem jeskyně jeho po kopcích šlehaných větry svá bydliště ve slujích měli. Ti tedy slyšíce křik, hned se stran se sbíhali různých, k jeho se stavěli sluji a ptali se, cože ho souží: ‚Čímpak jsi, Polyféme, tak postižen, že jsi tak vzkřikl za doby božské noci, a proč nás ze spánku budíš? Někdo-li z lidí ti brav tam vyhání proti tvé vůli, nebo tě samého lstí tam vraždí — či by snad silou?‘ Mohutný Polyfémos jim z jeskyně odvětil takto: ‚Přátelé, Nikdo mě lstí, však dokonce nevraždí silou.‘ V odpověď Kyklopové mu pravili perutná slova: ‚Sám-li jsi ve své sluji a Nikdo ti nedělá křivdy, nemoci velkého Dia se nijak vyhnouti nelze — otce však modlitbou svou hleď vzývati, Poseidona!‘"
+    },
+    {
+      "type": "text",
+      "text": "Odysseus, který se Polyfémovi představil jako Nikdo, jednoho z vás oslepil. Vyberte jednoho člena a zavažte mu oči (nebo jej jiným způsobem nakrátko oslepte). Vidět pak může, až když dojdete na další stanoviště."
+    }
+  ],
+  "kronika": {
+    "work": "Odysseia",
+    "decoys": [
+      "Ilias",
+      "Aeneis"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 7
+}

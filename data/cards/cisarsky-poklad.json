@@ -1,0 +1,26 @@
+{
+  "id": "cisarsky-poklad",
+  "title": "Císařský poklad",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "GegCCMBsbqo"
+    },
+    {
+      "type": "text",
+      "text": "Císařství padlo, nebo alespoň to Rakouské, takže bohužel za to nedostáváte žádné body. Ale mohli byste na tomhle ostrově nějaké přeci jen najít. Zámořský císař je přece stálý, vždyť smrt samotnou porazil už dávno. Sever! Narnie!"
+    }
+  ],
+  "kronika": {
+    "work": "Simpsonovi",
+    "decoys": [
+      "Futurama",
+      "Griffinovi"
+    ]
+  },
+  "task": {
+    "type": "find",
+    "hint": "direction"
+  },
+  "points": 10
+}

@@ -1,0 +1,100 @@
+{
+  "id": "praha-2026",
+  "listOrder": 1,
+  "title": "Mládež 2026",
+  "place": "Praha",
+  "date": "červen 2026",
+  "language": "cs",
+  "radius": 50,
+  "endsAt": "21:30",
+  "tracking": {
+    "ntfyTopic": "dante-praha-2c6822e403f1",
+    "positionEveryMinutes": 5
+  },
+  "finishText": "Na vyhodnocení počkejte na zahradě fary, až se vrátí všechny týmy.",
+  "cards": [
+    {
+      "card": "chvilka-filosofie",
+      "at": {
+        "lat": 50.04318,
+        "lng": 14.4119597
+      }
+    },
+    {
+      "card": "byt-ci-nebyt",
+      "at": {
+        "lat": 50.0706122,
+        "lng": 14.4248303
+      }
+    },
+    {
+      "card": "cisarsky-poklad",
+      "at": {
+        "lat": 50.0522219,
+        "lng": 14.4116989
+      },
+      "target": {
+        "lat": 50.06456,
+        "lng": 14.4128947
+      }
+    },
+    {
+      "card": "rubicon",
+      "at": {
+        "lat": 50.0667264,
+        "lng": 14.4285369
+      }
+    },
+    {
+      "card": "ve-zdravem-tele",
+      "at": {
+        "lat": 50.0636781,
+        "lng": 14.4172503
+      },
+      "from": "20:00"
+    },
+    {
+      "card": "maugli",
+      "at": {
+        "lat": 50.0549481,
+        "lng": 14.4188994
+      }
+    },
+    {
+      "card": "u-rek-babylonskych",
+      "at": {
+        "lat": 50.0502575,
+        "lng": 14.4125242
+      }
+    },
+    {
+      "card": "mind-meld",
+      "at": {
+        "lat": 50.0497681,
+        "lng": 14.4176258
+      }
+    },
+    {
+      "card": "pis-barde-skladej",
+      "at": {
+        "lat": 50.0520775,
+        "lng": 14.4268969
+      }
+    },
+    {
+      "card": "polyfemos",
+      "at": {
+        "lat": 50.0669692,
+        "lng": 14.4147444
+      }
+    },
+    {
+      "card": "zapis-do-kroniky",
+      "at": {
+        "lat": 50.0236217,
+        "lng": 14.411415
+      },
+      "from": "21:00"
+    }
+  ]
+}
