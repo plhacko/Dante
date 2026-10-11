@@ -77,7 +77,7 @@
   // ---- pings ----
   T.intervalMs = function () {
     var q = null;
-    try { q = new URLSearchParams(location.search).get('pingSec'); } catch (e) {}
+    try { if (D.testMode) q = new URLSearchParams(location.search).get('pingSec'); } catch (e) {}
     if (q && +q > 0) return +q * 1000;
     return ((D.game.tracking && D.game.tracking.positionEveryMinutes) || 5) * 60000;
   };
@@ -89,9 +89,11 @@
       T.send('position', { lat: D.pos.lat, lng: D.pos.lng, acc: Math.round(D.pos.acc || 0) });
     }).catch(function () {}).then(function () { T.checkGrades(); });
   };
+  var booted = false;
   function tick() {
     if (!D.game || !D.st || !D.st.started || document.hidden) return;
-    if (Date.now() - (D.st.lastPing || 0) >= T.intervalMs()) T.ping();
+    if (Date.now() - (D.st.lastPing || 0) >= T.intervalMs()) { booted = true; T.ping(); }
+    else if (!booted) { booted = true; T.getPos({ timeout: 10000, maxAge: 5000 }).catch(function () {}); }   // reopened page: get a fix without a new ping
   }
   T.start = function () {
     T.stop();

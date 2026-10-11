@@ -100,7 +100,7 @@ button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px
 .gn-tl { top: 14px; left: 15px; } .gn-br { bottom: 14px; right: 15px; transform: rotate(180deg); }
 .g-oval { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 66%; height: 64%; border-radius: 50%; border: 1px solid var(--rule); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--rule2); background: rgba(0,0,0,.2); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px; text-align: center; }
 .g-title { font-weight: 600; font-size: 16px; line-height: 1.12; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.g-time { display: flex; align-items: center; gap: 4px; padding-top: 5px; border-top: 1px solid rgba(217,163,90,.4); font-family: 'Cinzel', serif; font-weight: 600; font-size: 11px; color: #d9a35a; }
+.g-tlock { display: flex; align-items: center; gap: 4px; padding-top: 5px; border-top: 1px solid rgba(217,163,90,.4); font-family: 'Cinzel', serif; font-weight: 600; font-size: 11px; color: #d9a35a; }
 .g-dist { min-width: 50%; padding-top: 5px; border-top: 1px solid rgba(201,162,74,.4); font-family: 'Cinzel', serif; font-weight: 600; font-size: 11px; letter-spacing: .04em; }
 .gcard .g-oval { color: var(--ink); }
 .gfin { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }

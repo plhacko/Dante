@@ -128,7 +128,7 @@
   }
   function begin() {
     D.st.started = true; D.save();
-    D.Track.start(); D.Track.ping();
+    D.Track.start();   // first tick sends the starting position
     D.nav('#/grid');
   }
   D.acts.start = function () { var v = takeName(); if (!v) return; D.st.team = v; begin(); };
@@ -150,7 +150,7 @@
     var inner = '';
     if (locked) inner += I.lock(20, ink, 1.7); else inner += I.flower(20, gilt ? '#3b2615' : '#c9a24a', 1.2);
     inner += '<span class="g-title" style="color:' + ink + '">' + esc(pl.card.title) + '</span>';
-    if (s === 'timelocked') inner += '<span class="g-time">' + I.clock(12, '#d9a35a', 2) + 'v ' + esc(pl.p.from) + '</span>';
+    if (s === 'timelocked') inner += '<span class="g-tlock">' + I.clock(12, '#d9a35a', 2) + 'v ' + esc(pl.p.from) + '</span>';
     else if (pl.finale && !D.isDone(pl.id)) inner += '<span class="g-dist" style="color:' + ink + '">FINÁLE</span>';
     else if (d != null && !locked && s !== 'done') inner += '<span class="g-dist" style="color:' + ink + '">' + D.fmtDist(d) + '</span>';
     else if (d != null && s === 'done') inner += '<span class="g-dist" style="color:' + ink + '">' + D.fmtDist(d) + '</span>';

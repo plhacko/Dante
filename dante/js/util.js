@@ -78,8 +78,9 @@
 
   // ---- time (testing override: ?now=HH:MM shifts the clock) ----
   var offset = 0;
+  D.testMode = (location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1');
   try {
-    var q = new URLSearchParams(location.search).get('now');
+    var q = D.testMode ? new URLSearchParams(location.search).get('now') : null;
     if (q && /^\d{1,2}:\d{2}$/.test(q)) {
       var p = q.split(':'), t = new Date(); t.setHours(+p[0], +p[1], 0, 0);
       offset = t.getTime() - Date.now();
