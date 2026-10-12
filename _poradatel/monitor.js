@@ -8,6 +8,8 @@
   var LS_GAME = 'dante:monitorGame';
 
   // ---------- helpers ----------
+  // "Mládež 2026 · Praha", but no "… Mnichov · Mnichov" when the title already names the place
+  function gameName(g) { return g.title + (g.place && g.title.indexOf(g.place) < 0 ? ' · ' + g.place : ''); }
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
     if (attrs) for (var k in attrs) {
@@ -383,7 +385,8 @@
       return;
     }
     map = L.map('map', { zoomControl: true }).setView([48.137, 11.575], 13);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+    // OSM's own tile servers refuse requests without a Referer, and a page opened from disk sends none
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles &copy; Esri' }).addTo(map);
     L.control.scale({ metric: true, imperial: false, position: 'bottomleft' }).addTo(map);
     stationLayer = L.layerGroup().addTo(map);
     teamLayer = L.layerGroup().addTo(map);
@@ -454,7 +457,7 @@
     S.stepVals = {}; S.notes = {}; S.fitted = false; S.fitMode = null;
     lsSet(LS_GAME, id);
     document.getElementById('gameSelect').value = id;
-    document.getElementById('gameSubtitle').textContent = g.title + (g.place ? ' · ' + g.place : '');
+    document.getElementById('gameSubtitle').textContent = gameName(g);
     setStatus(true, 'NAČÍTÁM…');
     if (map && stationLayer) {
       render();
@@ -469,7 +472,7 @@
   function init() {
     var sel = document.getElementById('gameSelect');
     var gs = games();
-    gs.forEach(function (g) { sel.appendChild(el('option', { value: g.id, text: g.title + (g.place ? ' · ' + g.place : '') })); });
+    gs.forEach(function (g) { sel.appendChild(el('option', { value: g.id, text: gameName(g) })); });
     sel.addEventListener('change', function () { selectGame(sel.value); });
     document.getElementById('refresh').addEventListener('click', function () { poll(); });
     try { initMap(); } catch (e) { map = null; if (window.console) console.warn('map init failed', e); }

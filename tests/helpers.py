@@ -107,6 +107,7 @@ class H:
         self.ctx.route('**/*gstatic.com/**', lambda r: r.fulfill(status=200, body='', content_type='font/woff2'))
         self.ctx.route('**/*youtube*/**', lambda r: r.fulfill(status=200, body='<html></html>', content_type='text/html'))
         self.ctx.route('**/*tile.openstreetmap.org/**', lambda r: r.fulfill(status=200, body=PNG1, content_type='image/png'))
+        self.ctx.route('https://server.arcgisonline.com/**', lambda r: r.fulfill(status=200, body=PNG1, content_type='image/png'))
         self.page = self.ctx.new_page()
         self.page.on('console', lambda m: self.errors.append('console: ' + m.text) if m.type == 'error' else None)
         self.page.on('pageerror', lambda e: self.errors.append('pageerror: %s' % e))
