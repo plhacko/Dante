@@ -14,44 +14,89 @@
   "finishText": "[Kde se týmy sejdou na vyhodnocení]",
   "cards": [
     {
-      "card": "byt-ci-nebyt"
+      "card": "byt-ci-nebyt",
+      "at": {
+        "lat": 48.1730272,
+        "lng": 11.5505214
+      }
     },
     {
-      "card": "cisarsky-poklad"
-    },
-    {
-      "card": "rubicon"
+      "card": "rubicon",
+      "at": {
+        "lat": 48.1738156,
+        "lng": 11.5583414
+      }
     },
     {
       "card": "ve-zdravem-tele",
+      "at": {
+        "lat": 48.1704944,
+        "lng": 11.5541317
+      },
       "from": "20:00"
     },
     {
-      "card": "maugli"
+      "card": "maugli",
+      "at": {
+        "lat": 48.1725611,
+        "lng": 11.5552969
+      }
     },
     {
-      "card": "u-rek-babylonskych"
+      "card": "u-rek-babylonskych",
+      "at": {
+        "lat": 48.1731083,
+        "lng": 11.5534369
+      }
     },
     {
-      "card": "mind-meld"
+      "card": "mind-meld",
+      "at": {
+        "lat": 48.1711247,
+        "lng": 11.5577606
+      }
     },
     {
-      "card": "pis-barde-skladej"
+      "card": "pis-barde-skladej",
+      "at": {
+        "lat": 48.1721856,
+        "lng": 11.5590683
+      }
     },
     {
-      "card": "polyfemos"
+      "card": "polyfemos",
+      "at": {
+        "lat": 48.1708539,
+        "lng": 11.5560414
+      }
     },
     {
-      "card": "zluty"
+      "card": "zluty",
+      "at": {
+        "lat": 48.1693336,
+        "lng": 11.5524728
+      }
     },
     {
-      "card": "velmi-dobre"
+      "card": "velmi-dobre",
+      "at": {
+        "lat": 48.1698842,
+        "lng": 11.551585
+      }
     },
     {
-      "card": "proste-watsone"
+      "card": "proste-watsone",
+      "at": {
+        "lat": 48.1738989,
+        "lng": 11.5544214
+      }
     },
     {
       "card": "zapis-do-kroniky",
+      "at": {
+        "lat": 48.1711881,
+        "lng": 11.5542511
+      },
       "from": "21:00"
     }
   ]

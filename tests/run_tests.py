@@ -108,12 +108,14 @@ def t_grid(h):
     h.shot('grid-finale')
 
 
-@scenario('3 grid', 'mnichov grid: no coordinates, everything open except V', (IPHONE,))
+@scenario('3 grid', 'mnichov grid: locked until reached, near at Mauglí, V time-locked', (IPHONE,), geo=near(M, 'maugli'))
 def t_grid_m(h):
-    h.start(M, wait_pos=False)
+    h.start(M)
+    st = lambda c: h.t('card-' + c).get_attribute('data-status')
     eq(h.page.locator('.gcard').count(), len(regular(M)))
-    eq(h.t('card-maugli').get_attribute('data-status'), 'open')
-    eq(h.t('card-ve-zdravem-tele').get_attribute('data-status'), 'timelocked')
+    eq(st('maugli'), 'near')
+    eq(st('byt-ci-nebyt'), 'locked')
+    eq(st('ve-zdravem-tele'), 'timelocked')
     h.shot('grid-mnichov')
 
 
@@ -213,6 +215,7 @@ def t_choices(h):
     h.click('game-' + M)
     h.page.fill('[data-testid=team-name]', 'Mnichované')
     h.click('btn-start'); h.page.wait_for_selector('[data-testid=screen-grid]')
+    h.unlock('velmi-dobre')
     h.card('velmi-dobre')
     cn = CARDS['velmi-dobre']['task']['counter']
     for _ in range(3):
@@ -265,6 +268,7 @@ def t_quiz_shuffle(h):
     qs = t['questions']
     check(t.get('shuffle'), 'card is shuffled')
     h.start(M, wait_pos=False)
+    h.unlock(cid)
     h.card(cid)
     def dom_order():
         return [h.page.locator('fieldset.opts').nth(qi).locator('input').evaluate_all('els => els.map(e => +e.value)')
@@ -361,6 +365,7 @@ def t_find(h):
 def t_guess(h):
     h.start(M, wait_pos=False)
     t = CARDS['zluty']['task']
+    h.unlock('zluty')
     h.card('zluty')
     check('0:42' in h.text('btn-guess-start'), h.text('btn-guess-start'))
     check('rozhodčí' in h.page.inner_text('[data-testid=screen-card]'))
@@ -494,10 +499,10 @@ def t_kronika_p(h):
     eq(h.text('end-quiz'), '5')
 
 
-@scenario('11 finale+kronika', 'kronika quiz Mnichov (no coordinates), all correct', (IPHONE,))
+@scenario('11 finale+kronika', 'kronika quiz Mnichov (at the finale spot), all correct', (IPHONE,), geo=near(M, 'zapis-do-kroniky'))
 def t_kronika_m(h):
     fin = finale(M)
-    h.start(M, now='21:05', team='Mnichované', wait_pos=False)
+    h.start(M, now='21:05', team='Mnichované')
     h.done_all(M)
     h.card(fin)
     qs = kronika_flow(h, M, 99)
@@ -708,6 +713,7 @@ def t_layout_m(h):
         sw, cw, off = h.overflow(); h.shot('w360_m_' + label)
         if sw > cw or off: bad.append('%s: %d>%d %s' % (label, sw, cw, off))
     h.start(M, now='21:05', wait_pos=False); chk('grid')
+    h.unlock('zluty', 'velmi-dobre')
     h.card('zluty'); chk('guess-start')
     h.click('btn-guess-start'); h.page.wait_for_selector('[data-testid=guess-timer]'); chk('guess-referee')
     h.js('Dante.st.guess.zluty.startedAt -= 200000'); h.page.wait_for_selector('[data-testid=guess-end]'); chk('guess-end')
