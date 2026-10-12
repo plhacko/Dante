@@ -110,7 +110,7 @@ def t_grid(h):
 
 @scenario('3 grid', 'mnichov grid: locked until reached, near at Mauglí, V time-locked', (IPHONE,), geo=near(M, 'maugli'))
 def t_grid_m(h):
-    h.start(M)
+    h.start(M, now='12:00')
     st = lambda c: h.t('card-' + c).get_attribute('data-status')
     eq(h.page.locator('.gcard').count(), len(regular(M)))
     eq(st('maugli'), 'near')
@@ -210,7 +210,8 @@ def t_choices(h):
     h.click('btn-confirm')
     h.page.wait_for_selector('[data-testid=done-title]')
     eq(h.text('done-points'), '10 BODŮ')
-    # counter
+    # counter (Mnichov ends at 14:45, so play it at noon)
+    h.open(now='12:00')
     h.js('Dante.nav("#/")'); h.page.wait_for_selector('[data-testid=screen-picker]')
     h.click('game-' + M)
     h.page.fill('[data-testid=team-name]', 'Mnichované')
@@ -267,7 +268,7 @@ def t_quiz_shuffle(h):
     t = CARDS[cid]['task']
     qs = t['questions']
     check(t.get('shuffle'), 'card is shuffled')
-    h.start(M, wait_pos=False)
+    h.start(M, now='12:00', wait_pos=False)
     h.unlock(cid)
     h.card(cid)
     def dom_order():
@@ -363,7 +364,7 @@ def t_find(h):
 # ============================================================ 10 guess
 @scenario('10 guess', 'Žlutý: timer, +4,2 s, skip, finish, no restart', (IPHONE,))
 def t_guess(h):
-    h.start(M, wait_pos=False)
+    h.start(M, now='12:00', wait_pos=False)
     t = CARDS['zluty']['task']
     h.unlock('zluty')
     h.card('zluty')
@@ -502,7 +503,7 @@ def t_kronika_p(h):
 @scenario('11 finale+kronika', 'kronika quiz Mnichov (at the finale spot), all correct', (IPHONE,), geo=near(M, 'zapis-do-kroniky'))
 def t_kronika_m(h):
     fin = finale(M)
-    h.start(M, now='21:05', team='Mnichované')
+    h.start(M, now='14:50', team='Mnichované')
     h.done_all(M)
     h.card(fin)
     qs = kronika_flow(h, M, 99)
@@ -712,7 +713,7 @@ def t_layout_m(h):
     def chk(label):
         sw, cw, off = h.overflow(); h.shot('w360_m_' + label)
         if sw > cw or off: bad.append('%s: %d>%d %s' % (label, sw, cw, off))
-    h.start(M, now='21:05', wait_pos=False); chk('grid')
+    h.start(M, now='12:00', wait_pos=False); chk('grid')
     h.unlock('zluty', 'velmi-dobre')
     h.card('zluty'); chk('guess-start')
     h.click('btn-guess-start'); h.page.wait_for_selector('[data-testid=guess-timer]'); chk('guess-referee')

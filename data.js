@@ -565,7 +565,7 @@ window.DANTE_DATA = {
   "date": null,
   "language": "cs",
   "radius": 10,
-  "endsAt": "21:30",
+  "endsAt": "14:45",
   "tracking": {
     "ntfyTopic": "dante-mnichov-5157fd21ec7e",
     "positionEveryMinutes": 5
@@ -592,7 +592,7 @@ window.DANTE_DATA = {
         "lat": 48.1704944,
         "lng": 11.5541317
       },
-      "from": "20:00"
+      "from": "14:00"
     },
     {
       "card": "maugli",
@@ -656,7 +656,7 @@ window.DANTE_DATA = {
         "lat": 48.1711881,
         "lng": 11.5542511
       },
-      "from": "21:00"
+      "from": "14:45"
     }
   ]
 },
