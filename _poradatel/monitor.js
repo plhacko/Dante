@@ -6,6 +6,7 @@
   var STALE_MS = 10 * 60 * 1000;
   var POLL_MS = 30000;
   var LS_GAME = 'dante:monitorGame';
+  var LS_BASEMAP = 'dante:monitorBasemap';
 
   // ---------- helpers ----------
   // "Mládež 2026 · Praha", but no "… Mnichov · Mnichov" when the title already names the place
@@ -385,11 +386,36 @@
       return;
     }
     map = L.map('map', { zoomControl: true }).setView([48.137, 11.575], 13);
-    // OSM's own tile servers refuse requests without a Referer, and a page opened from disk sends none
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles &copy; Esri' }).addTo(map);
+    setBasemap(lsGet(LS_BASEMAP) || 'topo');
+    document.getElementById('basemaps').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-bm]'); if (b) setBasemap(b.dataset.bm);
+    });
     L.control.scale({ metric: true, imperial: false, position: 'bottomleft' }).addTo(map);
     stationLayer = L.layerGroup().addTo(map);
     teamLayer = L.layerGroup().addTo(map);
+  }
+
+  // Esri basemaps: OSM's own tile servers refuse requests without a Referer, and a page opened from disk sends none.
+  // [service, deepest zoom the service has tiles for]; the colour tint per basemap lives in monitor.css (.bm-*)
+  var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
+  var BASEMAPS = {
+    dark: [['Canvas/World_Dark_Gray_Base', 16], ['Canvas/World_Dark_Gray_Reference', 16]],
+    street: [['World_Street_Map', 19]],
+    topo: [['World_Topo_Map', 19]],
+    sat: [['World_Imagery', 19]]
+  };
+  var baseLayers = [];
+  function setBasemap(key) {
+    if (!BASEMAPS[key]) key = 'topo';
+    baseLayers.forEach(function (l) { map.removeLayer(l); });
+    baseLayers = BASEMAPS[key].map(function (b) {
+      return L.tileLayer(ESRI + b[0] + '/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, maxNativeZoom: b[1], className: 'bm-' + key, attribution: 'Tiles &copy; Esri' }).addTo(map);
+    });
+    baseLayers.forEach(function (l) { l.bringToBack(); });
+    [].forEach.call(document.querySelectorAll('#basemaps [data-bm]'), function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.bm === key));
+    });
+    lsSet(LS_BASEMAP, key);
   }
 
   function renderMap(M) {
