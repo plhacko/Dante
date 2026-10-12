@@ -256,7 +256,9 @@ button.num-br { padding: 12px 14px; margin: -12px -14px; }
 .kcard { align-self: center; position: relative; width: 180px; height: 240px; margin-top: 22px; border-radius: 8px; background: var(--bg); box-shadow: inset 0 0 0 1px rgba(0,0,0,.5), inset 0 0 28px rgba(0,0,0,.55), 0 2px 0 #0a0705, 0 10px 20px rgba(0,0,0,.5); }
 .kcard .fr1 { inset: 6px; border: 1px solid var(--rule); } .kcard .fr2 { inset: 9px; border: 1px solid var(--rule2); border-radius: 3px; }
 .kcard .gn { font-size: 13px; color: var(--cink); }
-.kc-t { font-weight: 600; font-size: 20px; line-height: 1.1; color: var(--cink); }
+.kc-n { font-family: 'Cinzel', serif; font-weight: 700; font-size: 34px; line-height: 1; color: var(--cink); }
+.kc-t { font-weight: 600; font-size: 16px; line-height: 1.1; color: var(--cink); animation: kc-reveal .6s ease-out both; }
+@keyframes kc-reveal { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 .k-q { margin: 22px 0 0; font-weight: 600; font-size: 22px; line-height: 1.25; text-align: center; color: var(--parch); }
 .kopts { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
 .kopt { min-height: 56px; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(201,162,74,.55); background: var(--panel); color: var(--parch); font-weight: 600; font-size: 19px; text-align: left; cursor: pointer; }

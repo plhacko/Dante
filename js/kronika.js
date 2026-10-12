@@ -50,7 +50,8 @@
     var html = '<div class="kq"><div class="k-top"><span class="k-top-l">ZÁPIS DO KRONIKY</span><span class="k-top-r" data-testid="kronika-progress">' + (i + 1) + ' / ' + k.qs.length + ' · ' + sc + ' ' + D.plural(sc) + '</span></div>' +
       '<div class="segs" aria-hidden="true" style="grid-template-columns:repeat(' + k.qs.length + ',minmax(0,1fr))">' + steps + '</div>' +
       '<div class="kcard" style="' + D.coverVars(pl.leather) + '"><span class="fr1"></span><span class="fr2"></span><span class="gn gn-tl">' + pl.n + '</span><span class="gn gn-br">' + pl.n + '</span>' +
-      '<span class="g-oval">' + I.flower(22, '#c9a24a', 1.2) + '<span class="kc-t">' + esc(pl.card.title) + '</span></span></div>' +
+      '<span class="g-oval">' + I.flower(22, '#c9a24a', 1.2) + '<span class="kc-n" data-testid="kcard-n">' + pl.n + '</span>' +
+        (answered ? '<span class="kc-t" data-testid="kcard-title">' + esc(pl.card.title) + '</span>' : '') + '</span></div>' +   // title only after answering: it would give the work away
       '<h1 class="k-q">Z jakého díla pochází ukázka na této kartě?</h1>' +
       '<div class="kopts" role="radiogroup" aria-label="Možnosti">' + opts + '</div>' + fb +
       (answered ? '<button type="button" class="btn-gold k-next" data-act="k-next" data-testid="btn-next">' + (last ? 'ZOBRAZIT VÝSLEDEK' : 'DALŠÍ OTÁZKA') + I.arrow(20, '#2a1b10', 2) + '</button>'

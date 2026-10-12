@@ -431,10 +431,14 @@ def kronika_flow(h, game, wrong_from, finale_geo=None):
             h.page.reload(); h.page.wait_for_selector('[data-testid=screen-kronika]')   # persists
             eq(h.text('kronika-progress').split('·')[0].strip(), '%d / %d' % (i + 1, n), 'reload keeps position')
             if i == 3: h.shot('kronika-quiz')
+        title = CARDS[q['card']]['title']
+        eq(h.t('kcard-title').count(), 0, 'card title hidden before answering')
+        check(title not in h.page.inner_text('[data-testid=screen-kronika]'), 'title not on screen: ' + title)
         right = i < wrong_from
         pick = q['correct'] if right else (q['correct'] + 1) % 3
         h.click('kopt-%d' % pick)
         h.page.wait_for_selector('[data-testid=kfeedback]')
+        eq(h.text('kcard-title'), title, 'title revealed after answering')
         fb = h.text('kfeedback')
         check(fb.startswith('Správně') == right, fb)
         check(h.t('kopt-0').is_disabled(), 'locked after answering')
