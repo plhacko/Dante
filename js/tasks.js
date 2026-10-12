@@ -54,7 +54,7 @@
 
   function lockedView(pl, s) {
     var msg = s === 'timelocked'
-      ? 'Tahle karta se otevře ve ' + esc(pl.p.from) + '.'
+      ? 'Tuto kartu lze plnit pouze ve ' + esc(pl.p.from) + '.'
       : 'Karta je zamčená. Dojděte na označené místo (do ' + D.game.radius + ' m) a zkontrolujte polohu.';
     var d = D.distTo(pl.p.at);
     var inner = I.flower(24, '#8c6b2c', 1.2) + '<h1 class="page-title" data-testid="card-title">' + esc(pl.card.title) + '</h1>' + D.divider() +
