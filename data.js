@@ -564,7 +564,7 @@ window.DANTE_DATA = {
   "place": "Mnichov",
   "date": null,
   "language": "cs",
-  "radius": 50,
+  "radius": 10,
   "endsAt": "21:30",
   "tracking": {
     "ntfyTopic": "dante-mnichov-5157fd21ec7e",
