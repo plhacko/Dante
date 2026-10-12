@@ -17,7 +17,7 @@
   }
   function fromChip(pl) {
     if (!pl.p.from || pl.finale) return '';
-    return '<span class="chip-time">' + I.clock(14, '#8a4a16', 2) + 'Lze plnit od ' + esc(pl.p.from) + '</span>';
+    return '<span class="chip-time">' + I.clock(14, '#8a4a16', 2) + 'Koná se v ' + esc(pl.p.from) + '</span>';
   }
   function backBtns(extra) {
     return (extra || '') + '<button type="button" class="btn-line" data-act="to-grid" data-testid="btn-back-cards">' + I.back(18, '#6a1e22', 1.9) + 'ZPĚT NA KARTY</button>';
