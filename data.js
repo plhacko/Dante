@@ -15,7 +15,7 @@ window.DANTE_DATA = {
     },
     {
       "type": "text",
-      "text": "**SCÉNÁŘ**\n\n**Role:** pan Burns, Smithers, publikum (všichni ostatní)\n\n**BURNS:** Teď bych rád zazpíval naši národní hymnu.\n*(zpívá)* „Mou zemí jen ty jsi, Rakousko s Uhrami, císař je pán…“\n*(Publikum se zmateně dívá jeden na druhého.)*\n**SMITHERS** *(šeptem)*: Arcivévoda je mrtev.\n**BURNS:** Cože? Arcivévoda zemřel?\n**SMITHERS:** …a císařství padlo.\n**BURNS:** Co bylo pak?\n**SMITHERS:** První světová.\n**BURNS:** A pak?\n**SMITHERS:** Druhá světová.\n**BURNS:** A pak?\n**SMITHERS:** Poválečné období.\n**BURNS:** A pak?\n**SMITHERS:** Studená válka… ehm, Karibská krize…\n**BURNS:** A pak?\n**SMITHERS:** Ehm… padla zeď.\n**BURNS:** A pak?\n**SMITHERS:** Evropská unie.\n**BURNS:** Evropská unie? Dobrý bože."
+      "text": "**SCÉNÁŘ**\n\n**Role:** pan Burns, Smithers, publikum (všichni ostatní)\n\n**BURNS:** Teď bych rád zazpíval naši národní hymnu.\n*(zpívá)* „Mou zemí jen ty jsi, Rakousko s Uhrami, císař je pán…“\n*(Publikum se zmateně dívá jeden na druhého.)*\n**SMITHERS** *(šeptem)*: Arcivévoda je mrtev.\n**BURNS:** Cože? Arcivévoda zemřel?\n**SMITHERS:** …a císařství padlo.\n**BURNS:** Co bylo pak?\n**SMITHERS:** První světová.\n**BURNS:** A pak?\n**SMITHERS:** Druhá světová.\n**BURNS:** A pak?\n**SMITHERS:** Poválečné období.\n**BURNS:** A pak?\n**SMITHERS:** Studená válka…\n**BURNS:** A pak?\n**SMITHERS:** Ehm… Karibská krize…\n**BURNS:** A pak?\n**SMITHERS:** Ehm… padla zeď.\n**BURNS:** A pak?\n**SMITHERS:** Evropská unie.\n**BURNS:** Evropská unie? Dobrý bože."
     }
   ],
   "kronika": {
