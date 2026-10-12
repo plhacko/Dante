@@ -113,7 +113,7 @@
   D.lsDel = function (k) { try { localStorage.removeItem(k); } catch (e) {} };
   function key(gameId) { return 'dante:' + gameId + ':state'; }
   D.emptyState = function () {
-    return { started: false, team: '', done: {}, unlocked: [], geoSkipped: [], quiz: {}, subs: {}, guess: {}, kronika: null, over: false, outbox: [], lastPing: 0 };
+    return { started: false, team: '', done: {}, unlocked: [], geoSkipped: [], quiz: {}, quizOrder: {}, subs: {}, guess: {}, kronika: null, over: false, outbox: [], lastPing: 0 };
   };
   D.loadState = function (gameId) {
     var s = D.emptyState();

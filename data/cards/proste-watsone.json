@@ -1,0 +1,53 @@
+{
+  "id": "proste-watsone",
+  "title": "Prosté, Watsone",
+  "content": [
+    {
+      "type": "quote",
+      "text": "„Z čeho jste ale vydedukoval ten telegram?“\n„Vím samozřejmě, že jste nepsal dopis, poněvadž jsem celé dopoledne seděl tady naproti vám. Na vašem otevřeném psacím stole dále vidím arch poštovních známek a pěkný štůsek korespondenčních lístků. Proč byste tedy chodil na poštu? Jedině proto, abyste poslal telegram. Vylučte všechny ostatní faktory, a ten jediný, který zůstane, musí být pravdivý.“\n„V tomhle případě tomu tak vskutku je,“ odpověděl jsem po krátké úvaze. „Jde však, jak jste sám řekl, o zcela jednoduchou věc.“",
+      "source": "Arthur Conan Doyle, Znamení čtyř, 1. kapitola"
+    },
+    {
+      "type": "text",
+      "text": "Na **Chodníku hvězd** podél Olympijského jezera nechaly otisky dlaní slavné osobnosti. V každém kole jsou **čtyři z pěti jmen opravdu na chodníku**, jedno je ale vetřelec. Projděte chodník a zjistěte, **kdo mezi hvězdy nepatří**.\n\nV každém kole máte **jen jeden pokus**."
+    }
+  ],
+  "kronika": {
+    "work": "Znamení čtyř",
+    "decoys": [
+      "Pes baskervillský",
+      "Studie v šarlatové"
+    ]
+  },
+  "task": {
+    "type": "quiz",
+    "pointsPerCorrect": 4,
+    "shuffle": true,
+    "questions": [
+      {
+        "q": "",
+        "options": [
+          "Alice Cooper",
+          "Elvis Presley",
+          "The Kelly Family",
+          "Sir Cliff Richard",
+          "Lenny Kravitz"
+        ],
+        "correct": 1,
+        "explain": "Elvis Presley zemřel v roce 1977, dlouho před vznikem chodníku. Všechny tři své ceny Grammy ale dostal za gospel."
+      },
+      {
+        "q": "",
+        "options": [
+          "Tom Jones",
+          "Iron Maiden",
+          "Lionel Richie",
+          "Elton John",
+          "Freddie Mercury"
+        ],
+        "correct": 4,
+        "explain": "Freddie Mercury v Mnichově začátkem 80. let několik let žil a nahrával. Chodník ale vznikl až 12 let po jeho smrti."
+      }
+    ]
+  }
+}

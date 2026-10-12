@@ -145,12 +145,23 @@
   D.acts.undo = function () { var pl = cur(); D.undone(pl.id); D.render(); };
 
   // ---------- quiz ----------
+  // task.shuffle: each team gets its own option order, kept across reloads; answers stay original indices
+  function quizOrder(pl) {
+    var t = pl.card.task, all = D.st.quizOrder || (D.st.quizOrder = {}), o = all[pl.id];
+    if (!o || o.length !== t.questions.length) {
+      o = all[pl.id] = t.questions.map(function (qq) { return D.shuffle(qq.options.map(function (_, i) { return i; })); });
+      D.save();
+    }
+    return o;
+  }
   function quizView(pl, ov, isDone) {
     var t = pl.card.task, q = D.st.quiz[pl.id], checked = !!q, h = D.cartHtml(pl.card);
+    var order = t.shuffle ? quizOrder(pl) : null;
     h += '<div class="quiz">' + t.questions.map(function (qq, qi) {
       var ans = checked ? q.answers[qi] : null;
-      var opts = qq.options.map(function (o, oi) {
-        var cls = 'opt';
+      var idx = order ? order[qi] : qq.options.map(function (_, i) { return i; });
+      var opts = idx.map(function (oi) {
+        var o = qq.options[oi], cls = 'opt';
         if (checked) { if (oi === qq.correct) cls += ' right'; else if (oi === ans) cls += ' wrong'; }
         return '<label class="' + cls + '"><input type="radio" name="q' + qi + '" value="' + oi + '"' + (checked ? ' disabled' : '') + (ans === oi ? ' checked' : '') + ' data-testid="q' + qi + '-o' + oi + '"><span>' + esc(o) + '</span></label>';
       }).join('');

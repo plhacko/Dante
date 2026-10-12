@@ -258,6 +258,38 @@ def t_quiz(h):
     eq(h.text('done-points'), bodu(ok * t['pointsPerCorrect']))
 
 
+@scenario('7 quiz', 'shuffled quiz (Mnichov Prosté, Watsone): own order kept on reload, scored by option', (IPHONE,))
+def t_quiz_shuffle(h):
+    cid = 'proste-watsone'
+    t = CARDS[cid]['task']
+    qs = t['questions']
+    check(t.get('shuffle'), 'card is shuffled')
+    h.start(M, wait_pos=False)
+    h.card(cid)
+    def dom_order():
+        return [h.page.locator('fieldset.opts').nth(qi).locator('input').evaluate_all('els => els.map(e => +e.value)')
+                for qi in range(len(qs))]
+    first = dom_order()
+    for qi, q in enumerate(qs):
+        eq(sorted(first[qi]), list(range(len(q['options']))), 'q%d is a permutation' % qi)
+    eq(first, h.js('Dante.st.quizOrder["%s"]' % cid), 'order stored in state')
+    h.page.reload(); h.page.wait_for_selector('[data-testid=screen-card]')
+    eq(dom_order(), first, 'same order after reload')
+    for qi, q in enumerate(qs):
+        want = q['correct'] if qi == 0 else (q['correct'] + 1) % len(q['options'])
+        h.pick('q%d-o%d' % (qi, want))
+    h.shot('card-quiz-shuffle')
+    h.click('btn-quiz-submit')
+    h.page.wait_for_selector('[data-testid=quiz-result]')
+    ok = 1
+    check('%d / %d' % (ok, len(qs)) in h.text('quiz-result'), h.text('quiz-result'))
+    eq(h.page.locator('.opt.right').count(), len(qs), 'right marked')
+    eq(h.page.locator('[data-testid^=explain-]').count(), len(qs))
+    h.click('btn-quiz-done')
+    h.page.wait_for_selector('[data-testid=done-title]')
+    eq(h.text('done-points'), bodu(ok * t['pointsPerCorrect']))
+
+
 # ============================================================ 8 submit / grade
 @scenario('8 submit', 'submit IX: posts submission, waiting screen, grade replaces bonus', (IPHONE,), geo=near(P, 'pis-barde-skladej'))
 def t_submit(h):
