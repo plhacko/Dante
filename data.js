@@ -580,6 +580,17 @@ window.DANTE_DATA = {
       }
     },
     {
+      "card": "cisarsky-poklad",
+      "at": {
+        "lat": 48.1708556,
+        "lng": 11.5561408
+      },
+      "target": {
+        "lat": 48.1698283,
+        "lng": 11.5543644
+      }
+    },
+    {
       "card": "rubicon",
       "at": {
         "lat": 48.1738156,
@@ -625,8 +636,8 @@ window.DANTE_DATA = {
     {
       "card": "polyfemos",
       "at": {
-        "lat": 48.1708539,
-        "lng": 11.5560414
+        "lat": 48.1708333,
+        "lng": 11.5483964
       }
     },
     {
