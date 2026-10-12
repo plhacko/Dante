@@ -74,6 +74,35 @@ window.DANTE_DATA = {
   },
   "points": 10
 },
+    "cisarsky-poklad-mnichov": {
+  "id": "cisarsky-poklad-mnichov",
+  "title": "Císařský poklad",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "GegCCMBsbqo"
+    },
+    {
+      "type": "text",
+      "text": "Natočte scénku z videa (viz scénář)."
+    },
+    {
+      "type": "text",
+      "text": "**SCÉNÁŘ**\n\n**Role:** pan Burns, Smithers, publikum (všichni ostatní)\n\n**BURNS:** Teď bych rád zazpíval naši národní hymnu.\n*(zpívá)* „Mou zemí jen ty jsi, Rakousko s Uhrami, císař je pán…“\n*(Publikum se zmateně dívá jeden na druhého.)*\n**SMITHERS** *(šeptem)*: Arcivévoda je mrtev.\n**BURNS:** Cože? Arcivévoda zemřel?\n**SMITHERS:** …a císařství padlo.\n**BURNS:** Co bylo pak?\n**SMITHERS:** První světová.\n**BURNS:** A pak?\n**SMITHERS:** Druhá světová.\n**BURNS:** A pak?\n**SMITHERS:** Poválečné období.\n**BURNS:** A pak?\n**SMITHERS:** Studená válka… ehm, Karibská krize…\n**BURNS:** A pak?\n**SMITHERS:** Ehm… padla zeď.\n**BURNS:** A pak?\n**SMITHERS:** Evropská unie.\n**BURNS:** Evropská unie? Dobrý bože."
+    }
+  ],
+  "kronika": {
+    "work": "Simpsonovi",
+    "decoys": [
+      "Futurama",
+      "Griffinovi"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+},
     "maugli": {
   "id": "maugli",
   "title": "Mauglí",
@@ -580,14 +609,10 @@ window.DANTE_DATA = {
       }
     },
     {
-      "card": "cisarsky-poklad",
+      "card": "cisarsky-poklad-mnichov",
       "at": {
         "lat": 48.1708556,
         "lng": 11.5561408
-      },
-      "target": {
-        "lat": 48.1698283,
-        "lng": 11.5543644
       }
     },
     {

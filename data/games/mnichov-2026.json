@@ -21,14 +21,10 @@
       }
     },
     {
-      "card": "cisarsky-poklad",
+      "card": "cisarsky-poklad-mnichov",
       "at": {
         "lat": 48.1708556,
         "lng": 11.5561408
-      },
-      "target": {
-        "lat": 48.1698283,
-        "lng": 11.5543644
       }
     },
     {
