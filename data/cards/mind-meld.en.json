@@ -1,0 +1,25 @@
+{
+  "id": "mind-meld",
+  "title": "Mind Meld",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "es7Br9kJBbo"
+    },
+    {
+      "type": "text",
+      "text": "With a simple handshake, Apollo-Soyuz connected two almost incompatible worlds. So pick a pair and link your brains: both of you say a random word at the same time, without agreeing on anything first. If the words match (synonyms count too), you win. If not, each of you tries on your own to come up with a word that lies between the previous two. Words may never repeat, and in between you must not hint at what your next word will be."
+    }
+  ],
+  "kronika": {
+    "work": "Apollo-Soyuz",
+    "decoys": [
+      "Sputnik",
+      "Apollo 11"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 5
+}

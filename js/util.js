@@ -49,14 +49,7 @@
     return (drop ? '<span class="dropcap">' + D.esc(drop) + '</span>' : '') + spansHtml(spans);
   };
 
-  // ---- czech plurals / numbers ----
-  D.plural = function (n) { return n === 1 ? 'BOD' : (n >= 2 && n <= 4 ? 'BODY' : 'BODŮ'); };
-  D.pluralLower = function (n) { return n === 1 ? 'bod' : (n >= 2 && n <= 4 ? 'body' : 'bodů'); };
-  D.num = function (n) { return String(n).replace('.', ','); };
-  D.ptsText = function (n) {   // "3 body", "0,42 bodu"
-    if (!Number.isInteger(n)) return D.num(n) + ' bodu';
-    return n + ' ' + D.pluralLower(n);
-  };
+  // ---- formatting (points, decimal comma and directions depend on the language: js/i18n.js) ----
   D.fmtSecs = function (s) { s = Math.max(0, Math.ceil(s)); var m = Math.floor(s / 60), r = s % 60; return m + ':' + (r < 10 ? '0' : '') + r; };
   D.fmtDist = function (m) { return m < 1000 ? Math.round(m) + ' m' : D.num((m / 1000).toFixed(1)) + ' km'; };
   D.roman = function (n) {
@@ -102,10 +95,6 @@
     var x = Math.cos(r(la1)) * Math.sin(r(la2)) - Math.sin(r(la1)) * Math.cos(r(la2)) * Math.cos(r(ln2 - ln1));
     return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
   };
-  var DIR_ADV = ['severně', 'severovýchodně', 'východně', 'jihovýchodně', 'jižně', 'jihozápadně', 'západně', 'severozápadně'];
-  var DIR_ACC = ['sever', 'severovýchod', 'východ', 'jihovýchod', 'jih', 'jihozápad', 'západ', 'severozápad'];
-  D.dirAdv = function (deg) { return DIR_ADV[Math.round(deg / 45) % 8]; };
-  D.dirAcc = function (deg) { return DIR_ACC[Math.round(deg / 45) % 8]; };
 
   // ---- storage (per game, one JSON object) ----
   D.lsGet = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };

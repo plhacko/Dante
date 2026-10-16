@@ -1,0 +1,25 @@
+{
+  "id": "byt-ci-nebyt",
+  "title": "To Be or Not to Be",
+  "content": [
+    {
+      "type": "text",
+      "text": "To be or not to be, THAT is the question. Record the monologue of Hamlet, Prince of Denmark, in this little amphitheatre. At the end, turn the camera on the cheering audience.\n(Feel free to use a phone as the skull, it is quite a long monologue.)"
+    },
+    {
+      "type": "quote",
+      "text": "To be, or not to be, that is the question:\nwhether 'tis nobler in the mind to suffer\nthe slings and arrows of outrageous fortune,\nor to take arms against a sea of troubles\nand by opposing end them.\n\nTo die, to sleep –\nno more; and by a sleep to say we end\nthe heart-ache and the thousand natural shocks\nthat flesh is heir to: 'tis a consummation\ndevoutly to be wish'd.\n\nTo die, to sleep;\nto sleep, perchance to dream – ay, there's the rub:\nfor in that sleep of death what dreams may come,\nwhen we have shuffled off this mortal coil,\nmust give us pause – there's the respect\nthat makes calamity of so long life.\n\nFor who would bear the whips and scorns of time,\nth'oppressor's wrong, the proud man's contumely,\nthe pangs of dispriz'd love, the law's delay,\nthe insolence of office, and the spurns\nthat patient merit of th'unworthy takes,\nwhen he himself might his quietus make\nwith a bare bodkin?\n\nWho would fardels bear,\nto grunt and sweat under a weary life,\nbut that the dread of something after death,\nthe undiscover'd country, from whose bourn\nno traveller returns, puzzles the will,\nand makes us rather bear those ills we have\nthan fly to others that we know not of?\n\nThus conscience does make cowards of us all,\nand thus the native hue of resolution\nis sicklied o'er with the pale cast of thought,\nand enterprises of great pitch and moment\nwith this regard their currents turn awry\nand lose the name of action."
+    }
+  ],
+  "kronika": {
+    "work": "Hamlet",
+    "decoys": [
+      "Macbeth",
+      "Othello"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

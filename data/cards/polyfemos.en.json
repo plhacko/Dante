@@ -1,0 +1,25 @@
+{
+  "id": "polyfemos",
+  "title": "Polyphemus",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Then my comrades seized the stake of olive wood, sharp at the end, and thrust it into his eye, while I, leaning on it from above, twisted it round. As when a man bores a ship’s timber with a drill and his companions below spin it with a strap, holding it at either end, and it runs round and round without stopping, so we twisted the fiery stake in the giant’s eye, and the hot blood flowed around it as it turned. (…) He gave a terrible roar of pain, and the rock rang all around. We sprang back in terror, but the Cyclops tore the stake, drenched with blood, out of his eye, hurled it away from him and, waving his arms wildly, called to the Cyclopes who lived in caves on the windy hills around his cave. Hearing his cries, they came running from every side, stood around his cave and asked what ailed him: ‘What has happened to you, Polyphemus, that you cry out like this in the divine night and wake us from our sleep? Is some man driving off your flocks against your will, or killing you yourself by cunning – or perhaps by force?’ Mighty Polyphemus answered them from the cave: ‘Friends, Nobody is killing me by cunning, and not at all by force.’ And the Cyclopes answered him with winged words: ‘If you are alone in your cave and Nobody does you wrong, there is no escaping a sickness sent by great Zeus – so pray to your father, Poseidon!’"
+    },
+    {
+      "type": "text",
+      "text": "Odysseus, who introduced himself to Polyphemus as Nobody, has blinded one of you. Choose one team member and blindfold them (or blind them for a short while in some other way). They may see again only when you reach the next station."
+    }
+  ],
+  "kronika": {
+    "work": "The Odyssey",
+    "decoys": [
+      "The Iliad",
+      "The Aeneid"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 7
+}

@@ -1,0 +1,25 @@
+{
+  "id": "polyfemos",
+  "title": "Polyphem",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Da ergriffen die Gefährten den Pfahl aus Olivenholz, vorne spitz, und stießen ihn ihm ins Auge, und ich, von oben darauf gestützt, drehte ihn. Wie wenn einer einen Schiffsbalken mit dem Bohrer durchbohrt und seine Gefährten ihn unten mit dem Riemen drehen, von beiden Seiten gefasst, und er sich unablässig dreht, so drehten wir den glühenden Pfahl im Auge des Riesen, und rings um ihn floss das heiße Blut, während er sich drehte. (…) Er brüllte entsetzlich vor Schmerz, dass ringsum der Fels widerhallte. Voller Grauen sprangen wir zurück, doch der Kyklop riss sich den Pfahl, von reichlichem Blut getränkt, aus dem Auge, schleuderte ihn von sich und rief, wild mit den Armen fuchtelnd, nach den Kyklopen, die rings um seine Höhle in Grotten auf den windumtosten Höhen wohnten. Als sie das Geschrei hörten, kamen sie von allen Seiten herbeigelaufen, stellten sich um seine Höhle und fragten, was ihn quäle: ‚Was ist dir geschehen, Polyphem, dass du so schreist in der göttlichen Nacht und uns aus dem Schlaf weckst? Treibt dir etwa ein Mensch die Herde gegen deinen Willen fort, oder bringt man dich selbst mit List um – oder gar mit Gewalt?‘ Der gewaltige Polyphem antwortete ihnen aus der Höhle: ‚Freunde, Niemand bringt mich mit List um, keineswegs mit Gewalt.‘ Darauf erwiderten ihm die Kyklopen geflügelte Worte: ‚Wenn du allein in deiner Höhle bist und Niemand dir Unrecht tut, so kann man einer Krankheit vom großen Zeus nicht entgehen – bete doch zu deinem Vater, zu Poseidon!‘"
+    },
+    {
+      "type": "text",
+      "text": "Odysseus, der sich Polyphem als Niemand vorstellte, hat einen von euch geblendet. Wählt ein Teammitglied aus und verbindet ihm die Augen (oder blendet es auf andere Weise für kurze Zeit). Sehen darf es erst wieder, wenn ihr an der nächsten Station angekommen seid."
+    }
+  ],
+  "kronika": {
+    "work": "Die Odyssee",
+    "decoys": [
+      "Die Ilias",
+      "Die Aeneis"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 7
+}

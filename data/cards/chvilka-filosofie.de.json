@@ -1,0 +1,22 @@
+{
+  "id": "chvilka-filosofie",
+  "title": "Ein Moment Philosophie",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Manches verbergen wir vor Fremden, manches vor Freunden und manches sogar vor uns selbst. Was tut ihr so, als wüsstet ihr es über euch nicht?"
+    },
+    {
+      "type": "text",
+      "text": "Die Frage ist schwer, also nehmt einen möglichst großen Stein und tragt ihn bis ganz oben auf die Treppe. Dann fotografiert den Stein und schickt das Foto in die Gruppe."
+    }
+  ],
+  "task": {
+    "type": "confirm"
+  },
+  "points": 5,
+  "bonus": {
+    "max": 5,
+    "description": "wenn euer Stein der größte war"
+  }
+}

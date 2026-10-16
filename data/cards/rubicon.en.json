@@ -1,0 +1,26 @@
+{
+  "id": "rubicon",
+  "title": "Rubicon",
+  "content": [
+    {
+      "type": "quote",
+      "text": "**A:** You will not marry, if you have any sense at all, and you will not give up this life of yours. For I, who am speaking to you, did marry – that is why I advise you: do not take a wife!\n**B:** The matter is decided and settled. Let the die be cast!\n**A:** Very well, go. But may heaven let you come out of it safe.\nYou are now setting out on a true sea of troubles –\nnot the Libyan, not the Aegean, nor the Sicilian,\nwhere of thirty ships three are saved –\nno married man has ever been saved!",
+      "source": "Menander, 342/41 – c. 290 BC"
+    },
+    {
+      "type": "text",
+      "text": "Caesar is only quoting Menander, but ==alea iacta est==: it is time to cross the Rubicon, or rather the Botič brook.\n\nChoose a Caesar among you, who must cross the brook with dry feet, but not by the bridge.\n\n**OR**\n\nIf the water is too cold for you, at least weave a laurel wreath out of leaves, which your chosen Caesar must wear until the end of the game.\n\nPhotos are welcome."
+    }
+  ],
+  "kronika": {
+    "work": "A lost play by Menander",
+    "decoys": [
+      "Oedipus Rex",
+      "Antigone"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

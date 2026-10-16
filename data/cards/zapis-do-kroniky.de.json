@@ -1,0 +1,20 @@
+{
+  "id": "zapis-do-kroniky",
+  "title": "Eintrag in die Chronik",
+  "content": [
+    {
+      "type": "quote",
+      "text": "E quindi uscimmo a riveder le stelle.\n(Und dann traten wir hinaus, die Sterne wiederzusehen.)",
+      "source": "Dante, Inferno XXXIV"
+    },
+    {
+      "type": "text",
+      "text": "Euer Weg hat euch heute über viele Stationen geführt. Geht zum Ziel, und bevor wir ihn in die Chronik eintragen, zeigt, was ihr euch davon gemerkt habt: Wählt bei jeder Karte, aus welchem Werk ihr Auszug stammt. Die Fragen erscheinen einzeln, und eine Antwort kann nicht zurückgenommen werden."
+    }
+  ],
+  "task": {
+    "type": "finale",
+    "quiz": "kronika",
+    "pointsPerCorrect": 1
+  }
+}

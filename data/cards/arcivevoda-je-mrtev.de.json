@@ -1,0 +1,29 @@
+{
+  "id": "arcivevoda-je-mrtev",
+  "title": "Der Erzherzog ist tot",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "GegCCMBsbqo"
+    },
+    {
+      "type": "text",
+      "text": "Filmt die Szene aus dem Video nach (siehe Drehbuch)."
+    },
+    {
+      "type": "text",
+      "text": "**DREHBUCH**\n\n**Rollen:** Mr. Burns, Smithers, Publikum (alle anderen)\n\n**BURNS:** Und nun möchte ich unsere Nationalhymne singen.\n*(singt)* „Mein Land, nur du allein, Österreich-Ungarn, der Kaiser regiert…“\n*(Das Publikum schaut sich verwirrt an.)*\n**SMITHERS** *(flüsternd)*: Der Erzherzog ist tot.\n**BURNS:** Was? Der Erzherzog ist gestorben?\n**SMITHERS:** …und das Kaiserreich ist untergegangen.\n**BURNS:** Was kam dann?\n**SMITHERS:** Der Erste Weltkrieg.\n**BURNS:** Und dann?\n**SMITHERS:** Der Zweite Weltkrieg.\n**BURNS:** Und dann?\n**SMITHERS:** Die Nachkriegszeit.\n**BURNS:** Und dann?\n**SMITHERS:** Der Kalte Krieg…\n**BURNS:** Und dann?\n**SMITHERS:** Ähm… die Kubakrise…\n**BURNS:** Und dann?\n**SMITHERS:** Ähm… die Mauer fiel.\n**BURNS:** Und dann?\n**SMITHERS:** Die Europäische Union.\n**BURNS:** Die Europäische Union? Gütiger Gott."
+    }
+  ],
+  "kronika": {
+    "work": "Die Simpsons",
+    "decoys": [
+      "Futurama",
+      "Family Guy"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

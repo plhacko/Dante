@@ -1,7 +1,7 @@
 /* Dante – render helpers: icons, card cover/page, content blocks, cartouche */
 (function () {
   'use strict';
-  var D = window.Dante, esc = D.esc;
+  var D = window.Dante, esc = D.esc, t = D.t;
 
   function svg(w, path, stroke, sw, extra) {
     return '<svg width="' + w + '" height="' + w + '" viewBox="0 0 24 24" fill="none" stroke="' + stroke + '" stroke-width="' + sw + '" ' + (extra == null ? 'stroke-linecap="round" stroke-linejoin="round"' : extra) + ' aria-hidden="true">' + path + '</svg>';
@@ -48,10 +48,10 @@
     if (gilt) {
       var fl = I.flower(18, '#3b2615', 1.4);
       num = '<span class="fl fl-tl">' + fl + '</span>' +
-        (opts.debug ? '<button type="button" class="fl fl-br num-br" data-act="debug" data-testid="debug-unlock" aria-label="Ladicí odemčení">' + fl + '</button>' : '<span class="fl fl-br">' + fl + '</span>');
+        (opts.debug ? '<button type="button" class="fl fl-br num-br" data-act="debug" data-testid="debug-unlock" aria-label="' + t('debugUnlock') + '">' + fl + '</button>' : '<span class="fl fl-br">' + fl + '</span>');
     } else {
       num = '<span class="num num-tl">' + pl.n + '</span>' +
-        (opts.debug ? '<button type="button" class="num num-br" data-act="debug" data-testid="debug-unlock" aria-label="Ladicí odemčení">' + pl.n + '</button>' : '<span class="num num-br">' + pl.n + '</span>');
+        (opts.debug ? '<button type="button" class="num num-br" data-act="debug" data-testid="debug-unlock" aria-label="' + t('debugUnlock') + '">' + pl.n + '</button>' : '<span class="num num-br">' + pl.n + '</span>');
     }
     return '<div class="cover" style="' + D.coverVars(pl.leather) + '"><span class="fr1"></span><span class="fr2"></span>' + num +
       '<div class="page">' + inner + '</div></div>';
@@ -79,26 +79,25 @@
 
   // points cartouche (port of Karta.dc.html renderVals)
   D.cartHtml = function (card) {
-    var t = card.task || {}, type = t.type, bonus = card.bonus, cart = null;
+    var task = card.task || {}, type = task.type, bonus = card.bonus, cart = null;
     var plural = D.plural, pl = D.pluralLower;
     if (type === 'quiz') {
-      var ppc = t.pointsPerCorrect || 1, max = ppc * (t.questions || []).length;
-      cart = { title: ppc + ' ' + plural(ppc) + ' ZA SPRÁVNOU ODPOVĚĎ', sub: 'až ' + max + ' ' + pl(max) + ' za celý kvíz' };
+      var ppc = task.pointsPerCorrect || 1, max = ppc * (task.questions || []).length;
+      cart = { title: t('cartQuiz', { n: ppc, pts: plural(ppc) }), sub: t('cartQuizSub', { max: max, pts: pl(max) }) };
     } else if (type === 'guess') {
-      var gp = t.pointsPerCorrect || 1, words = t.words || [], secs = t.seconds || 0;
+      var gp = task.pointsPerCorrect || 1, words = task.words || [], secs = task.seconds || 0;
       var gmax = Math.round(gp * words.length);
-      var unit = Number.isInteger(gp) ? plural(gp) : 'BODU';
-      var tt = (secs < 60 ? secs + ' s' : (secs % 60 ? D.fmtSecs(secs) : (secs / 60) + ' ' + ((secs / 60) === 1 ? 'minuta' : (secs / 60 <= 4 ? 'minuty' : 'minut')))) +
-        (t.bonusSecondsPerCorrect ? ' + ' + D.num(t.bonusSecondsPerCorrect) + ' s za každé slovo' : '');
-      cart = { title: D.num(gp) + ' ' + unit + ' ZA UHODNUTÉ SLOVO', sub: 'až ' + gmax + ' ' + pl(gmax) + ' · ' + tt + (Number.isInteger(gp) ? '' : ' · součet se na konci zaokrouhlí') };
-    } else if (t.choices && t.choices.length) {
-      cart = { title: t.choices.join(' / ') + ' ' + plural(t.choices[t.choices.length - 1]), sub: 'vyberte podle výsledku' };
-    } else if (t.counter) {
-      cart = { title: 'AŽ ' + t.counter.max + ' ' + plural(t.counter.max), sub: t.counter.hint || '' };
+      var tt = (secs < 60 ? secs + ' s' : (secs % 60 ? D.fmtSecs(secs) : D.minutesText(secs / 60))) +
+        (task.bonusSecondsPerCorrect ? t('perWord', { s: D.num(task.bonusSecondsPerCorrect) }) : '');
+      cart = { title: t('cartGuess', { n: D.num(gp), pts: plural(gp) }), sub: t('upTo', { max: gmax, pts: pl(gmax) }) + ' · ' + tt + (Number.isInteger(gp) ? '' : t('rounded')) };
+    } else if (task.choices && task.choices.length) {
+      cart = { title: task.choices.join(' / ') + ' ' + plural(task.choices[task.choices.length - 1]), sub: t('cartChoices') };
+    } else if (task.counter) {
+      cart = { title: t('cartUpTo', { max: task.counter.max, pts: plural(task.counter.max) }), sub: task.counter.hint || '' };
     } else if (card.points) {
-      cart = { title: card.points + ' ' + plural(card.points), sub: bonus ? 'bonus až +' + bonus.max + ' · ' + bonus.description : (type === 'find' ? 'za nalezení skrytého místa' : '') };
+      cart = { title: card.points + ' ' + plural(card.points), sub: bonus ? t('cartBonus', { max: bonus.max, desc: bonus.description }) : (type === 'find' ? t('cartFind') : '') };
     } else if (bonus) {
-      cart = { title: 'AŽ ' + bonus.max + ' ' + plural(bonus.max), sub: bonus.description };
+      cart = { title: t('cartUpTo', { max: bonus.max, pts: plural(bonus.max) }), sub: bonus.description };
     }
     if (!cart) return '';
     return '<div class="cart" data-testid="cartouche"><div class="cart-t">' + esc(cart.title) + '</div>' +

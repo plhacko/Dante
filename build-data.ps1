@@ -2,6 +2,8 @@
 # organizer monitor load all game data with a plain <script> tag (works on GitHub Pages
 # and when a page is opened straight from disk, where fetch() of local files is blocked).
 # Run via build-data.bat after adding or editing any JSON in data/.
+# Translations sit next to the Czech card as data/cards/<id>.en.json and <id>.de.json; they must keep
+# the Czech card's points, answers and item counts (tests/run_tests.py checks it).
 $ErrorActionPreference = 'Stop'
 
 $dir  = $PSScriptRoot

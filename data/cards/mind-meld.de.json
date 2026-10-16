@@ -1,0 +1,25 @@
+{
+  "id": "mind-meld",
+  "title": "Mind Meld",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "es7Br9kJBbo"
+    },
+    {
+      "type": "text",
+      "text": "Mit einem einfachen Händedruck verband Apollo-Sojus zwei fast unvereinbare Welten. Bestimmt deshalb ein Paar und verbindet eure Gehirne: Beide sagen gleichzeitig und ohne Absprache ein zufälliges Wort. Stimmen die Wörter überein (Synonyme zählen auch), habt ihr gewonnen. Sonst versucht jeder für sich, ein Wort zu finden, das zwischen den beiden vorherigen liegt. Wörter dürfen sich nie wiederholen, und zwischendurch dürft ihr nicht andeuten, was euer nächstes Wort sein wird."
+    }
+  ],
+  "kronika": {
+    "work": "Apollo-Sojus",
+    "decoys": [
+      "Sputnik",
+      "Apollo 11"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 5
+}

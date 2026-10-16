@@ -13,10 +13,14 @@ def _load(p):
     return json.loads(Path(p).read_text(encoding='utf-8'))
 
 
-CARDS = {}
+CARDS = {}           # Czech cards (the originals)
+CARDS_I18N = {}      # (id, lang) -> translated card, from data/cards/<id>.<lang>.json
 for _p in (DANTE / 'data' / 'cards').glob('*.json'):
     _c = _load(_p)
-    CARDS[_c['id']] = _c
+    if '.' in _p.stem:
+        CARDS_I18N[tuple(_p.stem.split('.', 1))] = _c
+    else:
+        CARDS[_c['id']] = _c
 GAMES = {_p.stem: _load(_p) for _p in (DANTE / 'data' / 'games').glob('*.json')}
 
 

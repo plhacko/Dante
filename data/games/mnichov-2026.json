@@ -12,6 +12,18 @@
     "positionEveryMinutes": 5
   },
   "finishText": "[Kde se týmy sejdou na vyhodnocení]",
+  "i18n": {
+    "en": {
+      "title": "YMCA Prameny 2026 - Munich",
+      "place": "Munich",
+      "finishText": "[Where the teams meet for the final scoring]"
+    },
+    "de": {
+      "title": "YMCA Prameny 2026 - München",
+      "place": "München",
+      "finishText": "[Wo sich die Teams zur Auswertung treffen]"
+    }
+  },
   "cards": [
     {
       "card": "byt-ci-nebyt",

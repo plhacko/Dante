@@ -1,0 +1,22 @@
+{
+  "id": "chvilka-filosofie",
+  "title": "A Moment of Philosophy",
+  "content": [
+    {
+      "type": "quote",
+      "text": "We hide some things from strangers, some from friends and some even from ourselves. What do you pretend not to know about yourselves?"
+    },
+    {
+      "type": "text",
+      "text": "It is a hard question, so take the biggest stone you can and carry it all the way to the top of the stairs. Then take a photo of the stone and send it to the group."
+    }
+  ],
+  "task": {
+    "type": "confirm"
+  },
+  "points": 5,
+  "bonus": {
+    "max": 5,
+    "description": "if your stone was the biggest"
+  }
+}

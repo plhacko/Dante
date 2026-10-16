@@ -1,0 +1,26 @@
+{
+  "id": "cisarsky-poklad",
+  "title": "The Emperor’s Treasure",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "GegCCMBsbqo"
+    },
+    {
+      "type": "text",
+      "text": "The empire has fallen, or at least the Austrian one has, so sadly you get no points for it. But you might still find some on this island. After all, the Emperor-beyond-the-Sea endures, he defeated death itself long ago. Narnia and the North!"
+    }
+  ],
+  "kronika": {
+    "work": "The Simpsons",
+    "decoys": [
+      "Futurama",
+      "Family Guy"
+    ]
+  },
+  "task": {
+    "type": "find",
+    "hint": "direction"
+  },
+  "points": 10
+}

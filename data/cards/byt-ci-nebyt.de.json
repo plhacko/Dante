@@ -1,0 +1,25 @@
+{
+  "id": "byt-ci-nebyt",
+  "title": "Sein oder Nichtsein",
+  "content": [
+    {
+      "type": "text",
+      "text": "Sein oder Nichtsein, DAS ist hier die Frage. Nehmt den Monolog von Hamlet, Prinz von Dänemark, in diesem kleinen Amphitheater auf. Am Ende schwenkt die Kamera auf das jubelnde Publikum.\n(Nehmt ruhig ein Handy als Totenschädel, der Monolog ist etwas länger.)"
+    },
+    {
+      "type": "quote",
+      "text": "Sein oder Nichtsein, das ist hier die Frage:\nob's edler im Gemüt, die Pfeil und Schleudern\ndes wütenden Geschicks erdulden oder,\nsich waffnend gegen eine See von Plagen,\ndurch Widerstand sie enden?\n\nSterben – schlafen –\nnichts weiter! Und zu wissen, dass ein Schlaf\ndas Herzweh und die tausend Stöße endet,\ndie unsers Fleisches Erbteil – 's ist ein Ziel,\naufs innigste zu wünschen.\n\nSterben – schlafen –\nschlafen! Vielleicht auch träumen! Ja, da liegt's:\nwas in dem Schlaf für Träume kommen mögen,\nwenn wir die irdische Verstrickung lösten,\ndas zwingt uns stillzustehn. Das ist die Rücksicht,\ndie Elend lässt zu hohen Jahren kommen.\n\nDenn wer ertrüg der Zeiten Spott und Geißel,\ndes Mächtigen Druck, des Stolzen Misshandlungen,\nverschmähter Liebe Pein, des Rechtes Aufschub,\nden Übermut der Ämter und die Schmach,\ndie Unwert schweigendem Verdienst erweist,\nwenn er sich selbst in Ruhstand setzen könnte\nmit einer Nadel bloß?\n\nWer trüge Lasten\nund stöhnt' und schwitzte unter Lebensmüh?\nNur dass die Furcht vor etwas nach dem Tod,\ndas unentdeckte Land, von des Bezirk\nkein Wandrer wiederkehrt, den Willen irrt,\ndass wir die Übel, die wir haben, lieber\nertragen als zu unbekannten fliehn.\n\nSo macht Bewusstsein Feige aus uns allen;\nder angebornen Farbe der Entschließung\nwird des Gedankens Blässe angekränkelt;\nund Unternehmungen voll Mark und Nachdruck,\ndurch diese Rücksicht aus der Bahn gelenkt,\nverlieren so der Handlung Namen."
+    }
+  ],
+  "kronika": {
+    "work": "Hamlet",
+    "decoys": [
+      "Macbeth",
+      "Othello"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

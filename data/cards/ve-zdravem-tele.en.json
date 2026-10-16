@@ -1,0 +1,18 @@
+{
+  "id": "ve-zdravem-tele",
+  "title": "A Sound Mind in a Sound Body",
+  "content": [
+    {
+      "type": "text",
+      "text": "A sound mind in a sound body, or at least a sound paramedic nearby, but a bit of sensible sport can do no harm either. Play frisbee to 3 points with the other teams. The winning teams get 15 points, the others 7. If there is an odd number of teams, one team will have to split up and will get 10 points."
+    }
+  ],
+  "task": {
+    "type": "confirm",
+    "choices": [
+      7,
+      10,
+      15
+    ]
+  }
+}

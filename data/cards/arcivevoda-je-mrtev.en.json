@@ -1,0 +1,29 @@
+{
+  "id": "arcivevoda-je-mrtev",
+  "title": "The Archduke Is Dead",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "GegCCMBsbqo"
+    },
+    {
+      "type": "text",
+      "text": "Film the scene from the video (see the script)."
+    },
+    {
+      "type": "text",
+      "text": "**SCRIPT**\n\n**Roles:** Mr. Burns, Smithers, audience (everyone else)\n\n**BURNS:** And now I'd like to sing our national anthem.\n*(sings)* “My country, 'tis of thee, Austria-Hungary, the Emperor reigns…”\n*(The audience look at each other in confusion.)*\n**SMITHERS** *(whispering)*: The Archduke is dead.\n**BURNS:** What? The Archduke has died?\n**SMITHERS:** …and the empire has fallen.\n**BURNS:** What came next?\n**SMITHERS:** The First World War.\n**BURNS:** And then?\n**SMITHERS:** The Second World War.\n**BURNS:** And then?\n**SMITHERS:** The post-war years.\n**BURNS:** And then?\n**SMITHERS:** The Cold War…\n**BURNS:** And then?\n**SMITHERS:** Um… the Cuban Missile Crisis…\n**BURNS:** And then?\n**SMITHERS:** Um… the Wall came down.\n**BURNS:** And then?\n**SMITHERS:** The European Union.\n**BURNS:** The European Union? Good Lord."
+    }
+  ],
+  "kronika": {
+    "work": "The Simpsons",
+    "decoys": [
+      "Futurama",
+      "Family Guy"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

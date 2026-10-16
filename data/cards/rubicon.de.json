@@ -1,0 +1,26 @@
+{
+  "id": "rubicon",
+  "title": "Rubikon",
+  "content": [
+    {
+      "type": "quote",
+      "text": "**A:** Du wirst nicht heiraten, wenn du auch nur ein wenig bei Verstand bist, und dieses dein Leben nicht aufgeben. Denn ich, der zu dir spricht, habe geheiratet – darum rate ich dir: Nimm dir keine Frau!\n**B:** Die Sache ist entschieden und beschlossen. Der Würfel soll geworfen sein!\n**A:** Nun gut, so geh. Doch möge der Himmel dich heil daraus hervorgehen lassen.\nAuf ein wahres Meer von Nöten begibst du dich nun –\nnicht das libysche, nicht das ägäische, nicht das sizilische,\nwo von dreißig Schiffen drei gerettet werden –\nkein verheirateter Mann wurde je gerettet!",
+      "source": "Menander, 342/41 – um 290 v. Chr."
+    },
+    {
+      "type": "text",
+      "text": "Caesar zitiert zwar nur Menander, aber ==alea iacta est==: Es ist Zeit, den Rubikon zu überschreiten, oder eher den Botič-Bach.\n\nWählt unter euch einen Caesar, der den Bach trockenen Fußes überqueren muss, aber nicht über die Brücke.\n\n**ODER**\n\nWenn euch das Wasser zu kalt ist, flechtet wenigstens einen Lorbeerkranz aus Blättern, den euer Caesar bis zum Ende des Spiels tragen muss.\n\nFotos sind willkommen."
+    }
+  ],
+  "kronika": {
+    "work": "Ein verlorenes Stück von Menander",
+    "decoys": [
+      "König Ödipus",
+      "Antigone"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 10
+}

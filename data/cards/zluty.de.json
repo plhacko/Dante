@@ -1,0 +1,140 @@
+{
+  "id": "zluty",
+  "title": "Gelb",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Gelb, dachte er.",
+      "source": "Douglas Adams, Per Anhalter durch die Galaxis, 1. Kapitel"
+    },
+    {
+      "type": "text",
+      "text": "Das Wort Bulldozer suchte eine Weile, womit es sich verbinden könnte. Jetzt seid ihr dran.\n\nWählt einen Schiedsrichter und gebt ihm das Handy. Er sieht ein Wort und seine Definition aus dem Wörterbuch, liest aber **nur die Definition** laut vor. Die anderen erraten das Wort. Am Anfang habt ihr **42 Sekunden**, und für jedes erratene Wort gibt es **4,2 Sekunden** dazu.\n\nIhr könnt ein Wort jederzeit überspringen, für übersprungene Wörter gibt es aber keine Punkte. Der Schiedsrichter darf das Wort weder aussprechen noch zeigen."
+    }
+  ],
+  "kronika": {
+    "work": "Per Anhalter durch die Galaxis",
+    "decoys": [
+      "Das Restaurant am Ende des Universums",
+      "Krieg der Welten"
+    ]
+  },
+  "task": {
+    "type": "guess",
+    "seconds": 42,
+    "bonusSecondsPerCorrect": 4.2,
+    "pointsPerCorrect": 0.42,
+    "rounding": "round",
+    "words": [
+      {
+        "word": "Handtuch",
+        "definition": "Ein Stück saugfähiger Stoff zum Abtrocknen von Körper oder Händen nach dem Waschen."
+      },
+      {
+        "word": "Bulldozer",
+        "alsoAccept": [
+          "Planierraupe"
+        ],
+        "definition": "Schwere Raupenmaschine mit breitem Schild vorne, mit der man Erde schiebt und einebnet."
+      },
+      {
+        "word": "Tee",
+        "definition": "Getränk, das man durch Aufgießen getrockneter Blätter mit heißem Wasser zubereitet."
+      },
+      {
+        "word": "Delfin",
+        "definition": "Intelligentes Meeressäugetier aus der Ordnung der Wale mit langgezogener Schnauze."
+      },
+      {
+        "word": "Maus",
+        "definition": "Kleines Nagetier mit langem, nacktem Schwanz und großen Ohren."
+      },
+      {
+        "word": "Wal",
+        "definition": "Großes Meeressäugetier, das durch ein Atemloch oben auf dem Kopf Luft holt."
+      },
+      {
+        "word": "Anhalter",
+        "alsoAccept": [
+          "Tramper"
+        ],
+        "definition": "Person, die reist, indem sie vorbeifahrende Fahrzeuge anhält und um eine Mitfahrt bittet."
+      },
+      {
+        "word": "Gedicht",
+        "definition": "Literarischer Text in Versen, oft gereimt."
+      },
+      {
+        "word": "Kneipe",
+        "definition": "Lokal, in dem Bier gezapft wird und Getränke und Speisen serviert werden."
+      },
+      {
+        "word": "Bademantel",
+        "alsoAccept": [
+          "Morgenmantel"
+        ],
+        "definition": "Weites Kleidungsstück mit Gürtel, das man zu Hause trägt, vor allem nach dem Baden oder am Morgen."
+      },
+      {
+        "word": "Umgehungsstraße",
+        "alsoAccept": [
+          "Umgehung",
+          "Hyperraum-Umgehungsstraße"
+        ],
+        "definition": "Schnellstraße um eine Stadt herum, damit der Durchgangsverkehr nicht durch das Zentrum fahren muss."
+      },
+      {
+        "word": "Panik",
+        "definition": "Plötzliche starke Angst, die zu unüberlegtem, chaotischem Handeln führt."
+      },
+      {
+        "word": "Enzyklopädie",
+        "alsoAccept": [
+          "Lexikon"
+        ],
+        "definition": "Umfangreiches Werk, das einen systematischen Überblick über das menschliche Wissen gibt, meist alphabetisch geordnet."
+      },
+      {
+        "word": "Planet",
+        "definition": "Großer Himmelskörper, der einen Stern umkreist und nicht selbst leuchtet."
+      },
+      {
+        "word": "Fjord",
+        "definition": "Schmale, tiefe Meeresbucht mit steilen Ufern, von einem Gletscher geformt."
+      },
+      {
+        "word": "Mensch",
+        "definition": "Von Affen abstammende Lebensform, so unglaublich primitiv, dass sie Digitaluhren noch immer für eine ziemlich tolle Erfindung hält."
+      },
+      {
+        "word": "Wahrscheinlichkeit",
+        "alsoAccept": [
+          "Unwahrscheinlichkeit"
+        ],
+        "definition": "Maß dafür, wie sehr man mit einem Ereignis rechnen kann, ausgedrückt als Zahl zwischen null und eins."
+      },
+      {
+        "word": "Manische Depression",
+        "alsoAccept": [
+          "bipolare Störung"
+        ],
+        "definition": "Psychische Störung, bei der Phasen übersteigert gehobener Stimmung mit Phasen tiefer Niedergeschlagenheit wechseln."
+      },
+      {
+        "word": "Gelb",
+        "definition": "Von der Farbe des Schwefels, der Löwenzahnblüten, der Sumpfdotterblume und Ähnlichem."
+      },
+      {
+        "word": "42",
+        "alsoAccept": [
+          "zweiundvierzig"
+        ],
+        "definition": "Gerade natürliche Zahl, das Produkt von zwei, drei und sieben."
+      },
+      {
+        "word": "Zahnbürste",
+        "definition": "Kleines Hilfsmittel mit Borsten zum Putzen der Zähne."
+      }
+    ]
+  }
+}

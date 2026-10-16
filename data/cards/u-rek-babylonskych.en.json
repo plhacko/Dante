@@ -1,0 +1,78 @@
+{
+  "id": "u-rek-babylonskych",
+  "title": "By the Rivers of Babylon",
+  "content": [
+    {
+      "type": "quote",
+      "text": "By the rivers of Babylon, there we sat down,\nyea, we wept, when we remembered Zion.\nWe hanged our harps upon the willows\nin the midst thereof.\nFor there they that carried us away captive\nrequired of us a song;\nand they that wasted us required of us mirth,\nsaying, Sing us one of the songs of Zion.\nHow shall we sing the LORD’s song\nin a strange land?\nIf I forget thee, O Jerusalem,\nlet my right hand forget her cunning.\nIf I do not remember thee,\nlet my tongue cleave to the roof of my mouth;\nif I prefer not Jerusalem\nabove my chief joy.",
+      "source": "Psalm 137, King James Version"
+    },
+    {
+      "type": "text",
+      "text": "Take the quiz:"
+    }
+  ],
+  "kronika": {
+    "work": "Psalms",
+    "decoys": [
+      "Song of Songs",
+      "Book of Job"
+    ]
+  },
+  "task": {
+    "type": "quiz",
+    "pointsPerCorrect": 2,
+    "questions": [
+      {
+        "q": "How many pairs of sheep did Noah take into the ark?",
+        "options": [
+          "1",
+          "2",
+          "7"
+        ],
+        "correct": 2,
+        "explain": "7 pairs – sheep are clean animals, so Noah took 7 pairs of them; of unclean animals (such as pigs) he took only one pair."
+      },
+      {
+        "q": "Who was freed from prison by an angel in Acts 12?",
+        "options": [
+          "Paul",
+          "Peter",
+          "Barnabas"
+        ],
+        "correct": 1,
+        "explain": "Peter – the angel led him at night out of the prison where Herod had locked him up."
+      },
+      {
+        "q": "Who was the first to see the risen Jesus?",
+        "options": [
+          "Peter",
+          "Mary Magdalene",
+          "John"
+        ],
+        "correct": 1,
+        "explain": "Mary Magdalene – she was the first to come to the tomb in the morning and she met the risen Jesus."
+      },
+      {
+        "q": "Which book of the New Testament was written first?",
+        "options": [
+          "The Gospel of Matthew",
+          "The Acts of the Apostles",
+          "1 Thessalonians"
+        ],
+        "correct": 2,
+        "explain": "1 Thessalonians – Paul wrote it around AD 50–51, while the Gospels and Acts were written only in the 60s–90s."
+      },
+      {
+        "q": "According to Psalm 137, what is better than forgetting Jerusalem? (see the verses above)",
+        "options": [
+          "To have his eye put out and his right hand cut off",
+          "To die in Babylonian captivity",
+          "That his right hand forget its skill and his tongue cleave to the roof of his mouth"
+        ],
+        "correct": 2,
+        "explain": "See verses 5–6: “If I forget thee, O Jerusalem, let my right hand forget her cunning. If I do not remember thee, let my tongue cleave to the roof of my mouth…”"
+      }
+    ]
+  }
+}

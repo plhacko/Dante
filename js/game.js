@@ -13,7 +13,7 @@
   D.places = function () {
     if (!D.game) return [];
     return D.game.cards.map(function (p, i) {
-      var card = D.data.cards[p.card];
+      var card = D.cardOf(p.card);   // in the current language
       var fin = !!(card && card.task && card.task.type === 'finale');
       return { idx: i, id: p.card, p: p, card: card, n: D.roman(i + 1), leather: fin ? 'gilt' : ORDER[i % 4], finale: fin };
     }).filter(function (x) { return x.card; });
@@ -77,10 +77,6 @@
       bonus += r.bonusPending || 0;
     });
     return { points: Math.round(pts * 100) / 100, bonus: bonus };
-  };
-  D.progress = function () {
-    var reg = D.regular();
-    return { done: reg.filter(function (x) { return D.isDone(x.id); }).length, total: reg.length };
   };
 
   D.markDone = function (id, points, bonusPending, extra) {

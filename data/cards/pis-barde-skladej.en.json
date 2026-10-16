@@ -1,0 +1,41 @@
+{
+  "id": "pis-barde-skladej",
+  "title": "Write, Bard, Compose",
+  "content": [
+    {
+      "type": "quote",
+      "text": "PTÁČEK: Oh yes, that is him. But me naming a mine after him? Nonsense! Unless he bought it from me. But would those little poems really earn him that much? It is possible. If he has enough money, I will gladly sell it to him. Write, bard, and save up, and when you have twenty million, the day will come when we settle accounts.",
+      "source": "The Messenger from Liptákov, Jára Cimrman"
+    },
+    {
+      "type": "text",
+      "text": "Choose a song that has at least three verses and write it out in the text box below. You lose one point for every wrong word. While doing the task, **do not look up** the lyrics of your song."
+    }
+  ],
+  "kronika": {
+    "work": "The Messenger from Liptákov",
+    "decoys": [
+      "The Conquest of the North Pole",
+      "The Stand-In"
+    ]
+  },
+  "task": {
+    "type": "submit",
+    "fields": [
+      {
+        "id": "song",
+        "label": "Song title"
+      },
+      {
+        "id": "lyrics",
+        "label": "Song lyrics",
+        "multiline": true,
+        "placeholder": "Write the whole song here (separate verses with blank lines)…"
+      }
+    ]
+  },
+  "bonus": {
+    "max": 10,
+    "description": "−1 for every wrong word · scored by the organizer"
+  }
+}

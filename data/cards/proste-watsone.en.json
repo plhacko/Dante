@@ -1,0 +1,53 @@
+{
+  "id": "proste-watsone",
+  "title": "Elementary, Watson",
+  "content": [
+    {
+      "type": "quote",
+      "text": "“But how did you deduce the telegram?”\n“Why, of course I knew that you had not written a letter, since I sat opposite to you all morning. I see also in your open desk there that you have a sheet of stamps and a thick bundle of postcards. What could you go into the post-office for, then, but to send a wire? Eliminate all other factors, and the one which remains must be the truth.”\n“In this case it certainly is so,” I replied, after a little thought. “The thing, however, is, as you say, of the simplest.”",
+      "source": "Arthur Conan Doyle, The Sign of the Four, chapter 1"
+    },
+    {
+      "type": "text",
+      "text": "Along the **Walk of Stars** by the Olympic Lake, famous people have left their handprints. In each round **four of the five names really are on the walk**, but one is an impostor. Walk along it and find out **who does not belong among the stars**.\n\nIn each round you have **only one try**."
+    }
+  ],
+  "kronika": {
+    "work": "The Sign of the Four",
+    "decoys": [
+      "The Hound of the Baskervilles",
+      "A Study in Scarlet"
+    ]
+  },
+  "task": {
+    "type": "quiz",
+    "pointsPerCorrect": 4,
+    "shuffle": true,
+    "questions": [
+      {
+        "q": "",
+        "options": [
+          "Alice Cooper",
+          "Elvis Presley",
+          "The Kelly Family",
+          "Sir Cliff Richard",
+          "Lenny Kravitz"
+        ],
+        "correct": 1,
+        "explain": "Elvis Presley died in 1977, long before the walk was created. All three of his Grammy awards were for gospel, though."
+      },
+      {
+        "q": "",
+        "options": [
+          "Tom Jones",
+          "Iron Maiden",
+          "Lionel Richie",
+          "Elton John",
+          "Freddie Mercury"
+        ],
+        "correct": 4,
+        "explain": "Freddie Mercury lived and recorded in Munich for several years in the early 1980s. But the walk was only created 12 years after his death."
+      }
+    ]
+  }
+}

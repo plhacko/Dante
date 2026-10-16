@@ -1,0 +1,41 @@
+{
+  "id": "pis-barde-skladej",
+  "title": "Schreib, Barde, dichte",
+  "content": [
+    {
+      "type": "quote",
+      "text": "PTÁČEK: Na ja, das ist er. Aber dass ich nach ihm ein Bergwerk benenne? Unsinn! Es sei denn, er kauft es mir ab. Aber dass ihm die Gedichtchen so viel einbringen? Möglich ist es. Wenn er genug Geld hat, verkaufe ich es ihm gern. Schreib, Barde, und spar, und wenn du zwanzig Millionen hast, kommt der Tag, an dem wir abrechnen.",
+      "source": "Der Bote aus Liptákov, Jára Cimrman"
+    },
+    {
+      "type": "text",
+      "text": "Sucht euch ein Lied mit mindestens drei Strophen aus und schreibt es in das Textfeld unten. Für jedes falsche Wort verliert ihr einen Punkt. Während der Aufgabe dürft ihr den Text eures Liedes **nicht nachschlagen**."
+    }
+  ],
+  "kronika": {
+    "work": "Der Bote aus Liptákov",
+    "decoys": [
+      "Die Eroberung des Nordpols",
+      "Der Einspringer"
+    ]
+  },
+  "task": {
+    "type": "submit",
+    "fields": [
+      {
+        "id": "song",
+        "label": "Titel des Liedes"
+      },
+      {
+        "id": "lyrics",
+        "label": "Liedtext",
+        "multiline": true,
+        "placeholder": "Schreibt hier den ganzen Liedtext (Strophen durch Leerzeilen trennen)…"
+      }
+    ]
+  },
+  "bonus": {
+    "max": 10,
+    "description": "−1 für jedes falsche Wort · bewertet die Spielleitung"
+  }
+}

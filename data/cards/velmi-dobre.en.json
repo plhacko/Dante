@@ -1,0 +1,31 @@
+{
+  "id": "velmi-dobre",
+  "title": "Very Good",
+  "content": [
+    {
+      "type": "quote",
+      "text": "And God saw every thing that he had made, and, behold, it was very good.",
+      "source": "Genesis 1:31, King James Version"
+    },
+    {
+      "type": "text",
+      "text": "Look around. First, as a team, **agree on which way you are looking**: pick one view and point at it.\n\nThen each of you, **alone and without talking it over**, writes down **5 nice things** you can see in that view.\n\nWhen everyone is done, read the lists out loud. Every thing that at least two of you wrote down is worth **1 point**. If **absolutely everyone** wrote it down, it is worth **2 points**."
+    }
+  ],
+  "kronika": {
+    "work": "Genesis",
+    "decoys": [
+      "Exodus",
+      "Revelation"
+    ]
+  },
+  "task": {
+    "type": "confirm",
+    "counter": {
+      "min": 0,
+      "max": 10,
+      "label": "How many points did you get?",
+      "hint": "1 point if at least two match, 2 points if everyone matches"
+    }
+  }
+}

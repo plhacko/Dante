@@ -1,0 +1,20 @@
+{
+  "id": "zapis-do-kroniky",
+  "title": "Entry in the Chronicle",
+  "content": [
+    {
+      "type": "quote",
+      "text": "E quindi uscimmo a riveder le stelle.\n(Thence we came forth to rebehold the stars.)",
+      "source": "Dante, Inferno XXXIV"
+    },
+    {
+      "type": "text",
+      "text": "Today your journey led through many stations. Reach the finish, and before we write it into the chronicle, show us what you remember of it: for each card, choose which work its excerpt comes from. The questions appear one at a time and an answer cannot be taken back."
+    }
+  ],
+  "task": {
+    "type": "finale",
+    "quiz": "kronika",
+    "pointsPerCorrect": 1
+  }
+}

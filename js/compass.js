@@ -1,7 +1,7 @@
 /* Dante – compass / radar screen */
 (function () {
   'use strict';
-  var D = window.Dante, esc = D.esc, I = D.icon;
+  var D = window.Dante, esc = D.esc, I = D.icon, t = D.t;
   var STEPS = [100, 200, 500, 1000, 2000, 3000, 5000, 10000, 20000, 50000];
   var R = 136; // px of the outer ring
   var C = D.compass = { mode: 'north', zi: null, hidden: {}, focus: null, acc: 0, heading: null, sensor: 'idle', geoErr: false };
@@ -16,7 +16,7 @@
     var i = 2; while (i < STEPS.length - 1 && STEPS[i] < far) i++;
     return i;
   }
-  function rangeLabel() { var r = STEPS[C.zi == null ? 2 : C.zi]; return 'OKRUH ' + D.fmtDist(r).toUpperCase(); }
+  function rangeLabel() { var r = STEPS[C.zi == null ? 2 : C.zi]; return t('range', { r: D.fmtDist(r).toUpperCase() }); }
 
   function markerHtml(pl) {
     var s = D.statusOf(pl), locked = s === 'locked' || s === 'timelocked';
@@ -38,27 +38,27 @@
   function chipsHtml() {
     return visiblePlaces().map(function (pl) {
       var off = C.hidden[pl.id], L = D.LEATHER[pl.leather], gilt = pl.leather === 'gilt';
-      return '<button type="button" class="chip" data-act="chip" data-id="' + esc(pl.id) + '" data-testid="chip-' + esc(pl.id) + '" aria-pressed="' + (off ? 'false' : 'true') + '" aria-label="Zobrazit ' + pl.n + '. ' + esc(pl.card.title) + '" style="background:' + L.bg + ';border-color:' + (gilt ? '#3b2615' : '#c9a24a') + ';color:' + (gilt ? '#3b2615' : '#e2c47a') + ';opacity:' + (off ? '.35' : '1') + ';text-decoration:' + (off ? 'line-through' : 'none') + '">' + (pl.finale ? '&#9830;' : pl.n) + '</button>';
+      return '<button type="button" class="chip" data-act="chip" data-id="' + esc(pl.id) + '" data-testid="chip-' + esc(pl.id) + '" aria-pressed="' + (off ? 'false' : 'true') + '" aria-label="' + t('showChip', { x: pl.n + '. ' + esc(pl.card.title) }) + '" style="background:' + L.bg + ';border-color:' + (gilt ? '#3b2615' : '#c9a24a') + ';color:' + (gilt ? '#3b2615' : '#e2c47a') + ';opacity:' + (off ? '.35' : '1') + ';text-decoration:' + (off ? 'line-through' : 'none') + '">' + (pl.finale ? '&#9830;' : pl.n) + '</button>';
     }).join('');
   }
   function unknownHtml() {
     var list = visiblePlaces().filter(function (pl) { return !pl.p.at; });
     if (!list.length) return '';
-    return '<p class="cp-lab">BEZ URČENÉ POLOHY</p><div class="unk">' + list.map(function (pl) {
+    return '<p class="cp-lab">' + t('noPlace') + '</p><div class="unk">' + list.map(function (pl) {
       var L = D.LEATHER[pl.leather];
       return '<button type="button" class="unk-c" data-act="open" data-id="' + esc(pl.id) + '" style="background:' + L.bg + '">' + pl.n + '. ' + esc(pl.card.title) + '</button>';
     }).join('') + '</div>';
   }
   function readout() {
-    if (C.mode !== 'heading') return C.sensor === 'unavailable' ? 'Tento telefon nedává údaj o směru. Sever zůstává nahoře.' : (C.sensor === 'denied' ? 'Přístup ke kompasu nebyl povolen. Sever zůstává nahoře.' : 'Sever je nahoře');
-    if (C.heading == null) return 'Čekám na údaj z kompasu…';
-    return 'Díváte se na ' + D.dirAcc(C.heading) + ' · ' + Math.round(C.heading) + '°';
+    if (C.mode !== 'heading') return t(C.sensor === 'unavailable' ? 'noSensor' : (C.sensor === 'denied' ? 'sensorDenied' : 'northUp'));
+    if (C.heading == null) return t('waitCompass');
+    return t('facing', { dir: D.dirAcc(C.heading), deg: Math.round(C.heading) });
   }
   function statusHtml() {
-    if (C.geoErr && !D.pos) return '<span class="dot bad"></span>POLOHA NENÍ DOSTUPNÁ · POVOLTE ZJIŠŤOVÁNÍ POLOHY';
-    if (!D.pos) return '<span class="dot wait"></span>ČEKÁM NA POLOHU…';
+    if (C.geoErr && !D.pos) return '<span class="dot bad"></span>' + t('geoOff');
+    if (!D.pos) return '<span class="dot wait"></span>' + t('geoWait');
     var s = Math.max(0, Math.round((Date.now() - D.pos.ts) / 1000));
-    return '<span class="dot"></span>POLOHA SE AKTUALIZUJE SAMA · PŘED ' + s + ' S';
+    return '<span class="dot"></span>' + t('geoLive', { s: s });
   }
 
   function applyRot() {
@@ -131,22 +131,23 @@
   D.screens.compass = function () {
     C.focus = D.compassFocus || null; D.compassFocus = null;
     C.zi = null; C.mode = 'north'; C.heading = null; C.sensor = 'idle'; C.geoErr = false; C.hidden = {};
+    var rose = D.tv('rose');   // N, E, S, W
     var html = D.header('grid') + D.scoreRow() +
-      (C.focus ? '<p class="cp-focus">Na kompasu je jen cíl. <button type="button" class="linkb" data-act="unfocus" data-testid="btn-unfocus">Ukázat všechny karty</button></p>' : '') +
-      '<div class="modes" role="group" aria-label="Natočení kompasu">' +
-      '<button type="button" id="mode-north" class="on" data-act="mode-north" data-testid="mode-north" aria-pressed="true">' + I.north(16, 'currentColor', 2) + 'SEVER NAHOŘE</button>' +
-      '<button type="button" id="mode-heading" data-act="mode-heading" data-testid="mode-heading" aria-pressed="false">' + I.heading(16, 'currentColor', 2) + 'PODLE POHLEDU</button></div>' +
-      '<p class="readout" id="cp-readout" data-testid="compass-readout" aria-live="polite">Sever je nahoře</p>' +
+      (C.focus ? '<p class="cp-focus">' + t('focusOnly') + ' <button type="button" class="linkb" data-act="unfocus" data-testid="btn-unfocus">' + t('showAll') + '</button></p>' : '') +
+      '<div class="modes" role="group" aria-label="' + t('orient') + '">' +
+      '<button type="button" id="mode-north" class="on" data-act="mode-north" data-testid="mode-north" aria-pressed="true">' + I.north(16, 'currentColor', 2) + t('modeNorth') + '</button>' +
+      '<button type="button" id="mode-heading" data-act="mode-heading" data-testid="mode-heading" aria-pressed="false">' + I.heading(16, 'currentColor', 2) + t('modeHeading') + '</button></div>' +
+      '<p class="readout" id="cp-readout" data-testid="compass-readout" aria-live="polite">' + t('northUp') + '</p>' +
       '<div class="radar-wrap"><div class="radar" id="radar" data-testid="radar"><div class="r-bg"></div>' +
       '<div class="r-rot"><div class="ring" style="width:85%;height:85%"></div><div class="ring" style="width:42%;height:42%"></div>' +
       '<svg class="r-lines" width="320" height="320" viewBox="0 0 320 320" fill="none" stroke="rgba(201,162,74,0.16)" stroke-width="1" aria-hidden="true"><path d="M160 22V298M22 160H298M62 62L258 258M258 62L62 258"></path></svg>' +
-      '<span class="cd cd-n">S</span><span class="cd cd-s">J</span><span class="cd cd-e">V</span><span class="cd cd-w">Z</span>' +
+      '<span class="cd cd-n">' + rose[0] + '</span><span class="cd cd-s">' + rose[2] + '</span><span class="cd cd-e">' + rose[1] + '</span><span class="cd cd-w">' + rose[3] + '</span>' +
       '<div id="cp-markers"></div></div>' +
       '<svg id="wedge" class="wedge" width="60" height="70" viewBox="0 0 60 70" aria-hidden="true" style="display:none"><path d="M30 70L4 4Q30 -6 56 4Z" fill="rgba(226,196,122,0.16)" stroke="rgba(226,196,122,0.45)" stroke-width="1"></path></svg>' +
-      '<div class="you" aria-label="Vaše poloha"><span></span></div>' +
-      '<div class="nopos" id="cp-nopos"><span>Čekám na polohu…</span></div></div></div>' +
-      '<div class="zoom"><button type="button" data-act="zoomout" data-testid="zoom-out" aria-label="Oddálit">−</button><span id="cp-range" data-testid="zoom-label">' + rangeLabel() + '</span><button type="button" data-act="zoomin" data-testid="zoom-in" aria-label="Přiblížit">+</button></div>' +
-      '<p class="cp-lab">ZOBRAZIT NA KOMPASU</p><div class="chips" id="cp-chips">' + chipsHtml() + '</div>' + unknownHtml() +
+      '<div class="you" aria-label="' + t('you') + '"><span></span></div>' +
+      '<div class="nopos" id="cp-nopos"><span>' + t('waitPos') + '</span></div></div></div>' +
+      '<div class="zoom"><button type="button" data-act="zoomout" data-testid="zoom-out" aria-label="' + t('zoomOut') + '">−</button><span id="cp-range" data-testid="zoom-label">' + rangeLabel() + '</span><button type="button" data-act="zoomin" data-testid="zoom-in" aria-label="' + t('zoomIn') + '">+</button></div>' +
+      '<p class="cp-lab">' + t('onCompass') + '</p><div class="chips" id="cp-chips">' + chipsHtml() + '</div>' + unknownHtml() +
       '<div class="stick-space"></div><div class="status" role="status" id="cp-status" data-testid="compass-status">' + statusHtml() + '</div>';
     return {
       html: html,

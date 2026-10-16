@@ -1,0 +1,78 @@
+{
+  "id": "u-rek-babylonskych",
+  "title": "An den Wassern zu Babel",
+  "content": [
+    {
+      "type": "quote",
+      "text": "An den Wassern zu Babel saßen wir und weinten,\nwenn wir an Zion gedachten.\nUnsere Harfen hingen wir an die Weiden,\ndie drinnen sind.\nDenn daselbst hießen uns singen,\ndie uns gefangen hielten,\nund in unserm Heulen fröhlich sein:\n»Singet uns ein Lied von Zion!«\nWie sollten wir des HERRN Lied singen\nin fremden Landen?\nVergesse ich dein, Jerusalem,\nso werde meiner Rechten vergessen.\nMeine Zunge müsse an meinem Gaumen kleben,\nwo ich dein nicht gedenke,\nwo ich nicht lasse Jerusalem\nmeine höchste Freude sein.",
+      "source": "Psalm 137, Lutherbibel 1912"
+    },
+    {
+      "type": "text",
+      "text": "Löst das Quiz:"
+    }
+  ],
+  "kronika": {
+    "work": "Psalmen",
+    "decoys": [
+      "Hoheslied",
+      "Buch Hiob"
+    ]
+  },
+  "task": {
+    "type": "quiz",
+    "pointsPerCorrect": 2,
+    "questions": [
+      {
+        "q": "Wie viele Paare Schafe nahm Noah mit in die Arche?",
+        "options": [
+          "1",
+          "2",
+          "7"
+        ],
+        "correct": 2,
+        "explain": "7 Paare – Schafe sind reine Tiere, deshalb nahm Noah von ihnen 7 Paare mit; von den unreinen Tieren (wie Schweinen) nur ein Paar."
+      },
+      {
+        "q": "Wer wurde in Apostelgeschichte 12 von einem Engel aus dem Gefängnis befreit?",
+        "options": [
+          "Paulus",
+          "Petrus",
+          "Barnabas"
+        ],
+        "correct": 1,
+        "explain": "Petrus – der Engel führte ihn nachts aus dem Gefängnis, in das Herodes ihn hatte werfen lassen."
+      },
+      {
+        "q": "Wer sah als Erster den auferstandenen Jesus?",
+        "options": [
+          "Petrus",
+          "Maria Magdalena",
+          "Johannes"
+        ],
+        "correct": 1,
+        "explain": "Maria Magdalena – sie kam am Morgen als Erste zum Grab und begegnete dem auferstandenen Jesus."
+      },
+      {
+        "q": "Welches Buch des Neuen Testaments wurde als erstes geschrieben?",
+        "options": [
+          "Das Evangelium nach Matthäus",
+          "Die Apostelgeschichte",
+          "Der 1. Brief an die Thessalonicher"
+        ],
+        "correct": 2,
+        "explain": "Der 1. Brief an die Thessalonicher – Paulus schrieb ihn um 50–51 n. Chr., die Evangelien und die Apostelgeschichte entstanden erst zwischen 60 und 90."
+      },
+      {
+        "q": "Was ist laut Psalm 137 besser, als Jerusalem zu vergessen? (siehe die Verse oben)",
+        "options": [
+          "Dass ihm ein Auge ausgestochen und die Rechte abgehauen werde",
+          "In der babylonischen Gefangenschaft zu sterben",
+          "Dass seiner Rechten vergessen werde und seine Zunge am Gaumen klebe"
+        ],
+        "correct": 2,
+        "explain": "Siehe Verse 5–6: „Vergesse ich dein, Jerusalem, so werde meiner Rechten vergessen. Meine Zunge müsse an meinem Gaumen kleben…“"
+      }
+    ]
+  }
+}

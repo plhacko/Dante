@@ -1,0 +1,26 @@
+{
+  "id": "cisarsky-poklad",
+  "title": "Der Schatz des Kaisers",
+  "content": [
+    {
+      "type": "video",
+      "youtube": "GegCCMBsbqo"
+    },
+    {
+      "type": "text",
+      "text": "Das Kaiserreich ist untergegangen, zumindest das österreichische, also bekommt ihr dafür leider keine Punkte. Aber auf dieser Insel könntet ihr doch noch welche finden. Der Kaiser jenseits des Meeres ist schließlich beständig, den Tod selbst hat er längst besiegt. Narnia und der Norden!"
+    }
+  ],
+  "kronika": {
+    "work": "Die Simpsons",
+    "decoys": [
+      "Futurama",
+      "Family Guy"
+    ]
+  },
+  "task": {
+    "type": "find",
+    "hint": "direction"
+  },
+  "points": 10
+}

@@ -1,0 +1,31 @@
+{
+  "id": "velmi-dobre",
+  "title": "Sehr gut",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Und Gott sah an alles, was er gemacht hatte; und siehe da, es war sehr gut.",
+      "source": "1. Mose 1,31, Lutherbibel 1912"
+    },
+    {
+      "type": "text",
+      "text": "Schaut euch um. Einigt euch zuerst als Team, **in welche Richtung ihr schaut**: Wählt einen Ausblick und zeigt mit der Hand darauf.\n\nDann schreibt jeder **für sich und ohne Absprache** auf, welche **5 schönen Dinge** er in diesem Ausblick sieht.\n\nWenn alle fertig sind, lest die Listen laut vor. Für jedes Ding, das mindestens zwei von euch aufgeschrieben haben, gibt es **1 Punkt**. Haben es **wirklich alle** aufgeschrieben, gibt es **2 Punkte**."
+    }
+  ],
+  "kronika": {
+    "work": "Genesis",
+    "decoys": [
+      "Exodus",
+      "Offenbarung des Johannes"
+    ]
+  },
+  "task": {
+    "type": "confirm",
+    "counter": {
+      "min": 0,
+      "max": 10,
+      "label": "Wie viele Punkte habt ihr bekommen?",
+      "hint": "1 Punkt, wenn mindestens zwei übereinstimmen, 2 Punkte, wenn alle übereinstimmen"
+    }
+  }
+}

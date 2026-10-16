@@ -1,0 +1,136 @@
+{
+  "id": "zluty",
+  "title": "Yellow",
+  "content": [
+    {
+      "type": "quote",
+      "text": "“Yellow,” he thought.",
+      "source": "Douglas Adams, The Hitchhiker’s Guide to the Galaxy, chapter 1"
+    },
+    {
+      "type": "text",
+      "text": "The word bulldozer spent a while looking for something to connect with. Now it is your turn.\n\nChoose a referee and give them the phone. They will see a word and its dictionary definition, but read out **only the definition**. The others guess the word. You start with **42 seconds** and get **4.2 seconds** extra for every word guessed.\n\nYou can skip a word at any time, but skipped words score no points. The referee must not say the word or show it."
+    }
+  ],
+  "kronika": {
+    "work": "The Hitchhiker’s Guide to the Galaxy",
+    "decoys": [
+      "The Restaurant at the End of the Universe",
+      "The War of the Worlds"
+    ]
+  },
+  "task": {
+    "type": "guess",
+    "seconds": 42,
+    "bonusSecondsPerCorrect": 4.2,
+    "pointsPerCorrect": 0.42,
+    "rounding": "round",
+    "words": [
+      {
+        "word": "Towel",
+        "definition": "A piece of absorbent cloth for drying your body or hands after washing."
+      },
+      {
+        "word": "Bulldozer",
+        "definition": "A heavy tracked machine with a wide blade at the front, used for pushing and levelling earth."
+      },
+      {
+        "word": "Tea",
+        "definition": "A drink made by steeping dried leaves in hot water."
+      },
+      {
+        "word": "Dolphin",
+        "definition": "An intelligent sea mammal related to whales, with a long, beak-like snout."
+      },
+      {
+        "word": "Mouse",
+        "definition": "A small rodent with a long bare tail and large ears."
+      },
+      {
+        "word": "Whale",
+        "definition": "A large sea mammal that breathes air through a blowhole on top of its head."
+      },
+      {
+        "word": "Hitchhiker",
+        "definition": "A person who travels by stopping passing vehicles and asking for a lift."
+      },
+      {
+        "word": "Poem",
+        "definition": "A piece of writing in verse, often rhyming."
+      },
+      {
+        "word": "Pub",
+        "definition": "A public place where beer is on tap and drinks and food are served."
+      },
+      {
+        "word": "Dressing gown",
+        "alsoAccept": [
+          "bathrobe",
+          "robe"
+        ],
+        "definition": "A loose garment with a belt, worn at home, especially after a bath or in the morning."
+      },
+      {
+        "word": "Bypass",
+        "alsoAccept": [
+          "ring road",
+          "hyperspace bypass"
+        ],
+        "definition": "A fast road that goes around a town so that through traffic does not have to pass through its centre."
+      },
+      {
+        "word": "Panic",
+        "definition": "Sudden strong fear that leads to thoughtless, chaotic behaviour."
+      },
+      {
+        "word": "Encyclopedia",
+        "definition": "A large work giving a systematic overview of human knowledge, usually arranged alphabetically."
+      },
+      {
+        "word": "Planet",
+        "definition": "A large celestial body orbiting a star, which does not shine by itself."
+      },
+      {
+        "word": "Fjord",
+        "definition": "A narrow, deep inlet of the sea between steep cliffs, carved out by a glacier."
+      },
+      {
+        "word": "Human",
+        "alsoAccept": [
+          "human being",
+          "man"
+        ],
+        "definition": "A life form descended from apes, so amazingly primitive that it still thinks digital watches are a pretty neat idea."
+      },
+      {
+        "word": "Probability",
+        "alsoAccept": [
+          "improbability"
+        ],
+        "definition": "A measure of how likely an event is to happen, expressed as a number from zero to one."
+      },
+      {
+        "word": "Manic depression",
+        "alsoAccept": [
+          "bipolar disorder"
+        ],
+        "definition": "A mental disorder in which periods of excessively elevated mood alternate with periods of deep despondency."
+      },
+      {
+        "word": "Yellow",
+        "definition": "Having the colour of sulphur, dandelion flowers, buttercups and the like."
+      },
+      {
+        "word": "42",
+        "alsoAccept": [
+          "forty-two"
+        ],
+        "definition": "An even natural number, the product of two, three and seven."
+      },
+      {
+        "word": "Toothbrush",
+        "definition": "A small tool with bristles for cleaning your teeth."
+      }
+    ]
+  }
+}

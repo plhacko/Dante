@@ -1,0 +1,31 @@
+{
+  "id": "maugli",
+  "title": "Mogli",
+  "content": [
+    {
+      "type": "quote",
+      "text": "Das Gesetz des Dschungels, das nie etwas ohne Grund befiehlt, verbietet jedem Tier, den Menschen zu fressen, außer wenn es tötet, um seinen Jungen das Töten zu zeigen – und dann muss es außerhalb der Jagdgründe seines Rudels oder Stammes jagen. Der wahre Grund dafür ist, dass das Töten eines Menschen früher oder später die Ankunft weißer Männer auf Elefanten bedeutet, mit Gewehren, und Hunderte brauner Männer mit Gongs, Raketen und Fackeln. Dann leidet jeder im Dschungel. Untereinander aber nennen die Tiere als Grund, dass der Mensch das schwächste und wehrloseste aller Lebewesen ist und es eines Jägers unwürdig wäre, ihn anzurühren.",
+      "source": "Rudyard Kipling, Das Dschungelbuch"
+    },
+    {
+      "type": "image",
+      "src": "assets/monkey-bars.png",
+      "alt": "Hangelleiter"
+    },
+    {
+      "type": "text",
+      "text": "Macht euch bereit für den Dschungel. Hangelt euch 20-mal über die Hangelleiter dieses Spielplatzes (nicht alle müssen gleich oft hangeln)."
+    }
+  ],
+  "kronika": {
+    "work": "Das Dschungelbuch",
+    "decoys": [
+      "Tarzan",
+      "Der König der Löwen"
+    ]
+  },
+  "task": {
+    "type": "confirm"
+  },
+  "points": 8
+}

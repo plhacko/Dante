@@ -12,6 +12,20 @@
     "positionEveryMinutes": 5
   },
   "finishText": "Na vyhodnocení počkejte na zahradě fary, až se vrátí všechny týmy.",
+  "i18n": {
+    "en": {
+      "title": "Youth 2026",
+      "place": "Prague",
+      "date": "June 2026",
+      "finishText": "Wait for the final scoring in the parish garden until all the teams are back."
+    },
+    "de": {
+      "title": "Jugend 2026",
+      "place": "Prag",
+      "date": "Juni 2026",
+      "finishText": "Wartet im Pfarrgarten auf die Auswertung, bis alle Teams zurück sind."
+    }
+  },
   "cards": [
     {
       "card": "chvilka-filosofie",

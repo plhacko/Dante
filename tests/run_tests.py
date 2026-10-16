@@ -1,5 +1,5 @@
 """Dante test suite. Run:  python run_tests.py [filter ...]   (see README.md)"""
-import datetime, json, sys, time, traceback
+import datetime, json, re, sys, time, traceback
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -88,7 +88,8 @@ def t_grid(h):
     eq(st('ve-zdravem-tele'), 'timelocked')
     check('20:00' in h.text('card-ve-zdravem-tele'), 'time chip')
     eq(st('byt-ci-nebyt'), 'locked')
-    check('0 / 10' in h.text('progress').replace('\n', ''), h.text('progress'))
+    eq(h.t('progress').count(), 0, 'no progress counter in the header')
+    eq(h.page.locator('.gcard[data-status=done]').count(), 0)
     check('0' in h.text('score-points') and h.text('score-bonus').startswith('+'), 'score row')
     # open with distance + done seal
     h.unlock('maugli')
@@ -98,7 +99,7 @@ def t_grid(h):
     check(any(u in h.text('card-maugli') for u in (' m', ' km')), 'distance on open card: ' + h.text('card-maugli'))
     eq(st('rubicon'), 'done')
     eq(h.t('card-rubicon').locator('.seal-b').count(), 1, 'seal')
-    check('1 / 10' in h.text('progress').replace('\n', ''))
+    eq(h.page.locator('.gcard[data-status=done]').count(), 1)
     check('8' in h.text('score-points'))
     h.shot('grid')
     # finale at 21:00
@@ -415,7 +416,7 @@ def kronika_flow(h, game, wrong_from, finale_geo=None):
     n = kronika_count(game)
     h.click('btn-fin-start')
     h.page.wait_for_selector('[data-testid=screen-kronika]')
-    qs = h.js('Dante.st.kronika.qs')
+    qs = h.js('Dante.st.kronika.qs.map(q => ({ card: q.card, correct: q.correct, options: Dante.kronikaOptions(q) }))')
     eq(len(qs), n, 'question count')
     seen = set()
     for q in qs:
@@ -637,7 +638,6 @@ def t_isolation(h):
     check(h.t('btn-start').count() == 1 and h.t('btn-continue').count() == 0, 'fresh Mnichov')
     h.page.fill('[data-testid=team-name]', 'Jiní'); h.click('btn-start')
     h.page.wait_for_selector('[data-testid=screen-grid]')
-    check('0 / %d' % len(regular(M)) in h.text('progress').replace('\n', ''), h.text('progress'))
     check(h.text('score-points').startswith('0'))
     eq(h.page.locator('.gcard[data-status=done]').count(), 0)
     keys = h.js('Object.keys(localStorage)')
@@ -645,7 +645,7 @@ def t_isolation(h):
     h.js('Dante.nav("#/")'); h.page.wait_for_selector('[data-testid=screen-picker]')
     h.click('game-' + P)
     h.click('btn-continue'); h.page.wait_for_selector('[data-testid=screen-grid]')
-    check('2 / 10' in h.text('progress').replace('\n', ''), h.text('progress'))
+    eq(h.page.locator('.gcard[data-status=done]').count(), 2)
 
 
 @scenario('15 organizer', 'long-press panel sets bonus points', (IPHONE,), geo=near(P, 'chvilka-filosofie'))
@@ -711,8 +711,7 @@ def t_layout(h):
     pass   # handled specially in main (needs one context per width)
 
 
-@scenario('16 layout', 'layout of Mnichov-only screens at 360 px', (IPHONE,), viewport={'width': 360, 'height': 740})
-def t_layout_m(h):
+def layout_m_pass(h):
     bad = []
     def chk(label):
         sw, cw, off = h.overflow(); h.shot('w360_m_' + label)
@@ -723,6 +722,12 @@ def t_layout_m(h):
     h.click('btn-guess-start'); h.page.wait_for_selector('[data-testid=guess-timer]'); chk('guess-referee')
     h.js('Dante.st.guess.zluty.startedAt -= 200000'); h.page.wait_for_selector('[data-testid=guess-end]'); chk('guess-end')
     h.card('velmi-dobre'); chk('counter')
+    return bad
+
+
+@scenario('16 layout', 'layout of Mnichov-only screens at 360 px', (IPHONE,), viewport={'width': 360, 'height': 740})
+def t_layout_m(h):
+    bad = layout_m_pass(h)
     check(not bad, '; '.join(bad))
 
 
@@ -813,6 +818,209 @@ def t_monitor_grade(h):
     h.page.click('#refresh'); h.page.wait_for_timeout(600)
     check('NAČÍTÁM' not in h.text('status'))
     h.errors[:] = [e for e in h.errors if 'ERR_FAILED' not in e and 'Failed to load' not in e]
+
+
+# ============================================================ 19 languages
+CZ_ONLY = re.compile(r'\S*[ěščřžůťďňĚŠČŘŽŮŤĎŇ]\S*')
+NAMES_OK = ('TÁČEK', 'Botič')        # Czech names that stay in the translations (PTÁČEK loses its P to the drop cap)
+
+
+def set_lang(h, lang):
+    """Language for every page load of this context, as if picked with the flag before."""
+    h.ctx.add_init_script("try { localStorage.setItem('dante:lang', '%s') } catch (e) {}" % lang)
+
+
+def card_in(cid, lang):
+    return CARDS[cid] if lang == 'cs' else CARDS_I18N[(cid, lang)]
+
+
+def shape(v, path=''):
+    """Card without its texts: what a translation has to keep (points, answers, ids, counts, order)."""
+    if isinstance(v, dict):
+        return {k: shape(x, path + '.' + k) for k, x in v.items() if k != 'alsoAccept'}
+    if isinstance(v, list):
+        return [shape(x, path) for x in v]
+    if isinstance(v, str) and path.rsplit('.', 1)[-1] not in ('id', 'type', 'youtube', 'src', 'quiz', 'rounding') and path != '.task.hint':
+        return ''
+    return v
+
+
+def czech_left(h):
+    """Words with Czech-only letters anywhere a player can see or hear them (text, labels, placeholders, toast, dialogs)."""
+    txt = h.js(r"""() => { const app = document.querySelector('#app'), out = [app.innerText, document.querySelector('#toast').textContent];
+        app.querySelectorAll('[aria-label],[placeholder],[alt]').forEach(e => ['aria-label', 'placeholder', 'alt'].forEach(a => out.push(e.getAttribute(a) || '')));
+        return out.join('\n'); }""") + '\n' + '\n'.join(h.dialogs)
+    for n in NAMES_OK:
+        txt = txt.replace(n, '')
+    return sorted(set(CZ_ONLY.findall(txt)))
+
+
+@scenario('19 languages', 'translations keep card structure, UI keys and placeholders; data.js is current', (IPHONE,))
+def t_lang_data(h):
+    for (cid, lang), c in CARDS_I18N.items():
+        check(lang in ('en', 'de'), 'unknown language file %s.%s' % (cid, lang))
+        check(cid in CARDS, 'no Czech card for %s.%s' % (cid, lang))
+        eq(shape(c), shape(CARDS[cid]), '%s.%s structure' % (cid, lang))
+    used = {p['card'] for g in GAMES.values() for p in g['cards']}
+    missing = sorted('%s.%s' % (c, l) for c in used for l in ('en', 'de') if (c, l) not in CARDS_I18N)
+    check(not missing, 'untranslated cards: %s' % missing)
+    for g in GAMES.values():
+        for l in ('en', 'de'):
+            check((g.get('i18n') or {}).get(l, {}).get('title'), '%s has no %s title' % (g['id'], l))
+    h.open()
+    files = lambda sub: {f.stem: json.loads(f.read_text(encoding='utf-8')) for f in (DANTE / 'data' / sub).glob('*.json')}
+    check(h.js('DANTE_DATA') == {'cards': files('cards'), 'games': files('games')}, 'data.js is out of date: run build-data.bat')
+    S = h.js('Dante.STRINGS')
+    def ph(v):
+        if isinstance(v, str): return sorted(re.findall(r'\{(\w+)\}', v))
+        return len(v) if isinstance(v, list) else sorted(v)
+    for l in ('en', 'de'):
+        eq(sorted(S[l]), sorted(S['cs']), '%s keys' % l)
+        for k, v in S['cs'].items():
+            eq(ph(S[l][k]), ph(v), '%s.%s placeholders' % (l, k))
+
+
+@scenario('19 languages', 'flag cycles cs -> en -> de -> cs, is remembered and sits on every screen', (IPHONE,), geo=FAR)
+def t_lang_flag(h):
+    h.open(now='12:00')
+    heads = {'cs': 'VYBERTE HRU', 'en': 'CHOOSE A GAME', 'de': 'SPIEL WÄHLEN'}
+    for lang in ('cs', 'en', 'de'):
+        eq(h.t('lang-flag').get_attribute('data-lang'), lang)
+        eq(h.js('document.documentElement.lang'), lang)
+        check(heads[lang] in h.text('screen-picker'), h.text('screen-picker'))
+        title = GAMES[M]['title'] if lang == 'cs' else GAMES[M]['i18n'][lang]['title']
+        check(title in h.text('game-' + M), h.text('game-' + M))
+        h.shot('picker-' + lang)
+        h.click('lang-flag')
+    eq(h.t('lang-flag').get_attribute('data-lang'), 'cs', 'third tap is Czech again')
+    h.click('lang-flag')
+    h.page.reload(); h.page.wait_for_selector('[data-testid=screen-picker]')
+    eq(h.t('lang-flag').get_attribute('data-lang'), 'en', 'kept after reload')
+    def one_flag(where):
+        eq(h.page.locator('[data-testid=lang-flag]').count(), 1, 'flags on ' + where)
+        eq(h.t('lang-flag').get_attribute('data-lang'), 'en', 'language on ' + where)
+    one_flag('picker')
+    h.click('game-' + M); h.page.wait_for_selector('[data-testid=screen-name]'); one_flag('name')
+    h.page.fill('[data-testid=team-name]', 'Pilgrims'); h.click('btn-start')
+    h.page.wait_for_selector('[data-testid=screen-grid]'); one_flag('grid')
+    eq(h.t('progress').count(), 0, 'no progress counter')
+    h.go('#/compass'); one_flag('compass')
+    h.card('byt-ci-nebyt'); h.page.wait_for_selector('[data-testid=locked-view]'); one_flag('locked card')
+    h.unlock('zluty'); h.card('zluty'); one_flag('card')
+    h.click('btn-guess-start'); h.page.wait_for_selector('[data-testid=guess-timer]'); one_flag('guess')
+    h.done_all(M); h.go('#/kronika'); one_flag('kronika')
+    h.js('Dante.st.kronika.finished = true; Dante.nav("#/end")'); h.page.wait_for_selector('[data-testid=screen-end]'); one_flag('end')
+    h.shot('end-en')
+
+
+@scenario('19 languages', 'switching mid-game keeps score, typed text and picks; cards, quiz and kronika follow', (IPHONE,), geo=FAR)
+def t_lang_switch(h):
+    h.open(now='12:00')
+    h.click('game-' + M)
+    h.page.fill('[data-testid=team-name]', 'Poutníci')
+    h.click('lang-flag')
+    eq(h.t('team-name').input_value(), 'Poutníci', 'typed team name survives the switch')
+    eq(h.text('btn-start'), 'START GAME')
+    h.click('btn-start'); h.page.wait_for_selector('[data-testid=screen-grid]')
+    # a done card: points stay, the card text follows the language
+    h.unlock('maugli'); h.card('maugli'); h.click('btn-confirm'); h.page.wait_for_selector('[data-testid=done-title]')
+    pts = CARDS['maugli']['points']
+    eq(h.text('done-points'), '%d POINTS' % pts)
+    eq(h.text('card-title'), card_in('maugli', 'en')['title'])
+    h.click('lang-flag')
+    eq(h.text('done-points'), '%d PUNKTE' % pts)
+    eq(h.text('card-title'), card_in('maugli', 'de')['title'])
+    eq(h.t('done-title').inner_text(), 'Geschafft!')
+    h.go('#/grid')
+    check(h.text('score-points').startswith('%d PUNKTE' % pts), h.text('score-points'))
+    eq(h.t('card-maugli').get_attribute('data-status'), 'done')
+    check(card_in('u-rek-babylonskych', 'de')['title'] in h.text('card-u-rek-babylonskych'), h.text('card-u-rek-babylonskych'))
+    # an unsent quiz pick survives, the result is in the new language
+    cid = 'u-rek-babylonskych'; qs = CARDS[cid]['task']['questions']
+    h.unlock(cid); h.card(cid)
+    for qi, q in enumerate(qs):
+        h.pick('q%d-o%d' % (qi, q['correct']))
+    h.click('lang-flag')                                        # -> cs
+    eq(h.js('Array.from(document.querySelectorAll("input[type=radio]:checked")).map(e => +e.value)'), [q['correct'] for q in qs], 'picks kept')
+    check(card_in(cid, 'cs')['task']['questions'][0]['q'] in h.text('screen-card'))
+    h.click('lang-flag')                                        # -> en
+    h.click('btn-quiz-submit'); h.page.wait_for_selector('[data-testid=quiz-result]')
+    check('%d / %d CORRECT' % (len(qs), len(qs)) in h.text('quiz-result'), h.text('quiz-result'))
+    eq(h.text('explain-0'), card_in(cid, 'en')['task']['questions'][0]['explain'])
+    # Žlutý: the same word, in the language on screen
+    h.unlock('zluty'); h.card('zluty'); h.click('btn-guess-start'); h.page.wait_for_selector('[data-testid=guess-word]')
+    g = h.js('Dante.st.guess.zluty')
+    for lang in ('de', 'cs', 'en'):
+        h.click('lang-flag')
+        eq(h.text('guess-word'), card_in('zluty', lang)['task']['words'][g['order'][g['idx']]]['word'], 'guess word in ' + lang)
+    h.js('Dante.st.guess.zluty.startedAt -= 200000'); h.page.wait_for_selector('[data-testid=guess-end]')
+    # kronika: the options switch language, the right one stays right
+    h.done_all(M); h.go('#/kronika')
+    for lang in ('de', 'cs', 'en'):
+        h.click('lang-flag')
+        q = h.js('Dante.st.kronika.qs[0]')
+        opts = h.js('Dante.kronikaOptions(Dante.st.kronika.qs[0])')
+        eq(opts[q['correct']], card_in(q['card'], lang)['kronika']['work'], 'right work in ' + lang)
+        eq([h.text('kopt-%d' % i).split('\n')[-1] for i in range(3)], opts, 'options shown in ' + lang)
+    h.click('kopt-%d' % q['correct']); h.page.wait_for_selector('[data-testid=kfeedback]')
+    check(h.text('kfeedback').startswith('Correct!'), h.text('kfeedback'))
+    eq(h.text('kcard-title'), card_in(q['card'], 'en')['title'])
+
+
+def no_czech_walk(h, lang):
+    set_lang(h, lang)
+    left = []
+    def chk(label):
+        bad = czech_left(h)
+        if bad: left.append('%s: %s' % (label, ' '.join(bad[:6])))
+    h.open(now='12:00'); chk('picker')
+    h.click('game-' + M); h.page.wait_for_selector('[data-testid=screen-name]'); chk('name')
+    h.click('btn-start'); chk('name error')
+    h.page.fill('[data-testid=team-name]', 'Pilgrims'); h.click('btn-start'); h.page.wait_for_selector('[data-testid=screen-grid]')
+    chk('grid')
+    h.go('#/compass'); h.page.wait_for_timeout(300); chk('compass')
+    h.card('byt-ci-nebyt'); chk('locked card')
+    h.card('ve-zdravem-tele'); chk('time-locked card')
+    h.click('debug-unlock'); h.page.wait_for_selector('[data-testid=btn-confirm]'); chk('debug unlock')
+    h.unlock(*regular(M))
+    for cid in regular(M):
+        h.card(cid); chk(cid)
+    h.card('u-rek-babylonskych')
+    for qi, q in enumerate(CARDS['u-rek-babylonskych']['task']['questions']): h.pick('q%d-o%d' % (qi, q['correct']))
+    h.click('btn-quiz-submit'); h.page.wait_for_selector('[data-testid=quiz-result]'); chk('quiz result')
+    h.click('btn-quiz-done'); h.page.wait_for_selector('[data-testid=done-title]'); chk('quiz done')
+    h.card('rubicon'); h.click('btn-confirm'); h.page.wait_for_selector('[data-testid=done-title]'); chk('confirm done')
+    h.card('pis-barde-skladej')
+    for f in CARDS['pis-barde-skladej']['task']['fields']: h.page.fill('[data-testid=field-%s]' % f['id'], 'Song')
+    h.click('btn-submit'); h.page.wait_for_selector('[data-testid=submit-sent]'); chk('submit sent')
+    h.card('zluty'); h.click('btn-guess-start'); h.page.wait_for_selector('[data-testid=guess-word]'); chk('guess referee')
+    h.js('Dante.st.guess.zluty.startedAt -= 200000'); h.page.wait_for_selector('[data-testid=guess-end]'); chk('guess end')
+    h.done_all(M); h.card(finale(M)); h.page.wait_for_timeout(300); chk('finale')
+    h.go('#/kronika'); chk('kronika')
+    h.click('kopt-0'); h.page.wait_for_selector('[data-testid=kfeedback]'); chk('kronika answered')
+    h.js('Dante.st.kronika.finished = true; Dante.nav("#/end")'); h.page.wait_for_selector('[data-testid=screen-end]'); chk('end')
+    h.open(now='15:00', hash='#/grid'); chk('game over')
+    for cid in [c for c in regular(P) if c not in regular(M)]:      # Praha-only cards
+        h.js('Dante.loadGame("%s"); Dante.st.started = true; Dante.unlock("%s")' % (P, cid))
+        h.card(cid); chk(cid)
+    return left
+
+
+for _lang in ('en', 'de'):
+    def _make(lang):
+        @scenario('19 languages', 'no Czech left on any screen in %s' % lang, (IPHONE,), geo=FAR)
+        def t_no_czech(h):
+            left = no_czech_walk(h, lang)
+            check(not left, '; '.join(left))
+
+        @scenario('19 languages', 'layout at 360 px in %s (Praha and Mnichov screens)' % lang, (IPHONE,), geo=near(P, 'chvilka-filosofie'), viewport={'width': 360, 'height': 740})
+        def t_layout_lang(h):
+            set_lang(h, lang)
+            bad = layout_pass(h, 360)
+            h.js('localStorage.removeItem("dante:lastGame")')
+            bad += layout_m_pass(h)
+            check(not bad, '; '.join(bad))
+    _make(_lang)
 
 
 # ============================================================ runner

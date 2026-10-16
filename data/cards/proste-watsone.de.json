@@ -1,0 +1,53 @@
+{
+  "id": "proste-watsone",
+  "title": "Elementar, Watson",
+  "content": [
+    {
+      "type": "quote",
+      "text": "„Aber wie haben Sie auf das Telegramm geschlossen?“\n„Nun, natürlich wusste ich, dass Sie keinen Brief geschrieben hatten, denn ich saß Ihnen den ganzen Vormittag gegenüber. Außerdem sehe ich in Ihrem offenen Schreibtisch dort einen Bogen Briefmarken und ein dickes Bündel Postkarten. Wozu also hätten Sie aufs Postamt gehen sollen, wenn nicht, um ein Telegramm aufzugeben? Schließen Sie alle anderen Faktoren aus, und der eine, der übrig bleibt, muss die Wahrheit sein.“\n„In diesem Fall ist es tatsächlich so“, erwiderte ich nach kurzem Nachdenken. „Die Sache ist jedoch, wie Sie selbst sagen, ganz einfach.“",
+      "source": "Arthur Conan Doyle, Das Zeichen der Vier, 1. Kapitel"
+    },
+    {
+      "type": "text",
+      "text": "Am **Walk of Stars** entlang des Olympiasees haben berühmte Persönlichkeiten ihre Handabdrücke hinterlassen. In jeder Runde stehen **vier der fünf Namen wirklich auf dem Weg**, einer aber ist ein Eindringling. Geht den Weg ab und findet heraus, **wer nicht zu den Stars gehört**.\n\nIn jeder Runde habt ihr **nur einen Versuch**."
+    }
+  ],
+  "kronika": {
+    "work": "Das Zeichen der Vier",
+    "decoys": [
+      "Der Hund von Baskerville",
+      "Eine Studie in Scharlachrot"
+    ]
+  },
+  "task": {
+    "type": "quiz",
+    "pointsPerCorrect": 4,
+    "shuffle": true,
+    "questions": [
+      {
+        "q": "",
+        "options": [
+          "Alice Cooper",
+          "Elvis Presley",
+          "The Kelly Family",
+          "Sir Cliff Richard",
+          "Lenny Kravitz"
+        ],
+        "correct": 1,
+        "explain": "Elvis Presley starb 1977, lange bevor der Weg entstand. Alle drei seiner Grammys bekam er allerdings für Gospel."
+      },
+      {
+        "q": "",
+        "options": [
+          "Tom Jones",
+          "Iron Maiden",
+          "Lionel Richie",
+          "Elton John",
+          "Freddie Mercury"
+        ],
+        "correct": 4,
+        "explain": "Freddie Mercury lebte Anfang der 80er-Jahre einige Jahre in München und nahm dort Musik auf. Der Weg entstand aber erst 12 Jahre nach seinem Tod."
+      }
+    ]
+  }
+}

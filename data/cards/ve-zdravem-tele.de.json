@@ -1,0 +1,18 @@
+{
+  "id": "ve-zdravem-tele",
+  "title": "Gesunder Geist, gesunder Körper",
+  "content": [
+    {
+      "type": "text",
+      "text": "In einem gesunden Körper wohnt ein gesunder Geist, oder wenigstens ein gesunder Sanitäter. Aber vernünftiger Sport kann auch nicht schaden. Spielt mit den anderen Teams Frisbee auf 3 Punkte. Die Gewinnerteams bekommen 15 Punkte, die anderen 7. Ist die Zahl der Teams ungerade, muss sich ein Team aufteilen und bekommt dann 10 Punkte."
+    }
+  ],
+  "task": {
+    "type": "confirm",
+    "choices": [
+      7,
+      10,
+      15
+    ]
+  }
+}
