@@ -210,7 +210,7 @@ def t_choices(h):
     h.click('btn-confirm')
     h.page.wait_for_selector('[data-testid=done-title]')
     eq(h.text('done-points'), '10 BODŮ')
-    # counter (Mnichov ends at 15:40, so play it at noon)
+    # counter (Mnichov ends at 15:50, so play it at noon)
     h.open(now='12:00')
     h.js('Dante.nav("#/")'); h.page.wait_for_selector('[data-testid=screen-picker]')
     h.click('game-' + M)
@@ -997,7 +997,7 @@ def no_czech_walk(h, lang):
     h.go('#/kronika'); chk('kronika')
     h.click('kopt-0'); h.page.wait_for_selector('[data-testid=kfeedback]'); chk('kronika answered')
     h.js('Dante.st.kronika.finished = true; Dante.nav("#/end")'); h.page.wait_for_selector('[data-testid=screen-end]'); chk('end')
-    h.open(now='15:40', hash='#/grid'); chk('game over')
+    h.open(now='16:00', hash='#/grid'); chk('game over')
     for cid in [c for c in regular(P) if c not in regular(M)]:      # Praha-only cards
         h.js('Dante.loadGame("%s"); Dante.st.started = true; Dante.unlock("%s")' % (P, cid))
         h.card(cid); chk(cid)

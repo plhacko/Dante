@@ -1770,7 +1770,7 @@ window.DANTE_DATA = {
   "date": null,
   "language": "cs",
   "radius": 10,
-  "endsAt": "15:40",
+  "endsAt": "15:50",
   "tracking": {
     "ntfyTopic": "dante-mnichov-5157fd21ec7e",
     "positionEveryMinutes": 5
