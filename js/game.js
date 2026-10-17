@@ -38,9 +38,11 @@
     if (!D.pos || !loc) return null;
     return D.distM(D.pos.lat, D.pos.lng, loc.lat, loc.lng);
   };
+  // a card may set its own reach in the game JSON ("radius"), otherwise the game's applies
+  D.radiusOf = function (pl) { return (pl && pl.p.radius) || D.game.radius; };
   D.isNear = function (pl) {
     var d = D.distTo(pl.p.at);
-    return d != null && d <= D.game.radius;
+    return d != null && d <= D.radiusOf(pl);
   };
   // 'done' | 'near' | 'open' | 'locked' | 'timelocked' | 'hidden'
   D.statusOf = function (pl) {

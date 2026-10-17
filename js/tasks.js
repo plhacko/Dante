@@ -53,7 +53,7 @@
   D.onGradeCard = function () { D.render(); };
 
   function lockedView(pl, s) {
-    var msg = s === 'timelocked' ? tr('timeLocked', { t: esc(pl.p.from) }) : tr('locked', { r: D.game.radius });
+    var msg = s === 'timelocked' ? tr('timeLocked', { t: esc(pl.p.from) }) : tr('locked', { r: D.radiusOf(pl) });
     var d = D.distTo(pl.p.at);
     var inner = I.flower(24, '#8c6b2c', 1.2) + '<h1 class="page-title" data-testid="card-title">' + esc(pl.card.title) + '</h1>' + D.divider() +
       '<div class="lockbox" data-testid="locked-view">' + I.lock(30, '#5a4632', 1.7) + '<p>' + msg + '</p>' +
@@ -264,7 +264,7 @@
     el.disabled = true; msg.textContent = tr('locatingLow');
     D.Track.getPos({ timeout: 12000, maxAge: 0 }).then(function () {
       var d = D.distTo(tg);
-      if (d <= D.game.radius) return ok();
+      if (d <= D.radiusOf(pl)) return ok();
       var dy = (tg.lat - D.pos.lat) * 111320, dx = (tg.lng - D.pos.lng) * 111320 * Math.cos(D.pos.lat * Math.PI / 180);
       var dir = Math.abs(dy) >= Math.abs(dx) ? (dy > 0 ? 'n' : 's') : (dx > 0 ? 'e' : 'w');
       msg.textContent = tr('moreTo', { dir: D.tv('dir4')[dir] }); msg.dataset.dir = dir; el.disabled = false;
@@ -350,7 +350,7 @@
     var at = cur().p.at; if (!at) return '';
     if (!D.pos) return tr('locatingTarget');
     var d = D.distTo(at), b = D.bearing(D.pos.lat, D.pos.lng, at.lat, at.lng);
-    return d <= D.game.radius ? tr('atFinish') : D.fmtDist(d) + ' ' + D.dirAdv(b);
+    return d <= D.radiusOf(cur()) ? tr('atFinish') : D.fmtDist(d) + ' ' + D.dirAdv(b);
   }
   function finaleView(pl) {
     var k = D.st.kronika, h = '';
@@ -378,7 +378,7 @@
     el.disabled = true; msg.textContent = tr('locatingLow');
     D.Track.getPos({ timeout: 12000, maxAge: 0 }).then(function () {
       var d = D.distTo(pl.p.at);
-      if (d <= D.game.radius) return D.nav('#/kronika');
+      if (d <= D.radiusOf(pl)) return D.nav('#/kronika');
       msg.textContent = tr('notAtFinish', { d: D.fmtDist(d), dir: D.dirAdv(D.bearing(D.pos.lat, D.pos.lng, pl.p.at.lat, pl.p.at.lng)) }); el.disabled = false;
     }).catch(function () { msg.textContent = tr('geoFail'); el.disabled = false; });
   };

@@ -1822,7 +1822,8 @@ window.DANTE_DATA = {
       "at": {
         "lat": 48.1731083,
         "lng": 11.5534369
-      }
+      },
+      "radius": 70
     },
     {
       "card": "mind-meld",
@@ -1871,8 +1872,7 @@ window.DANTE_DATA = {
       "at": {
         "lat": 48.1711881,
         "lng": 11.5542511
-      },
-      "from": "15:35"
+      }
     }
   ]
 },
