@@ -1770,7 +1770,7 @@ window.DANTE_DATA = {
   "date": null,
   "language": "cs",
   "radius": 10,
-  "endsAt": "14:45",
+  "endsAt": "15:35",
   "tracking": {
     "ntfyTopic": "dante-mnichov-5157fd21ec7e",
     "positionEveryMinutes": 5
@@ -1809,14 +1809,6 @@ window.DANTE_DATA = {
         "lat": 48.1738156,
         "lng": 11.5583414
       }
-    },
-    {
-      "card": "ve-zdravem-tele",
-      "at": {
-        "lat": 48.1704944,
-        "lng": 11.5541317
-      },
-      "from": "14:00"
     },
     {
       "card": "maugli",
@@ -1880,7 +1872,7 @@ window.DANTE_DATA = {
         "lat": 48.1711881,
         "lng": 11.5542511
       },
-      "from": "14:45"
+      "from": "15:35"
     }
   ]
 },

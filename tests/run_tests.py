@@ -109,14 +109,13 @@ def t_grid(h):
     h.shot('grid-finale')
 
 
-@scenario('3 grid', 'mnichov grid: locked until reached, near at Mauglí, V time-locked', (IPHONE,), geo=near(M, 'maugli'))
+@scenario('3 grid', 'mnichov grid: locked until reached, near at Mauglí', (IPHONE,), geo=near(M, 'maugli'))
 def t_grid_m(h):
     h.start(M, now='12:00')
     st = lambda c: h.t('card-' + c).get_attribute('data-status')
     eq(h.page.locator('.gcard').count(), len(regular(M)))
     eq(st('maugli'), 'near')
     eq(st('byt-ci-nebyt'), 'locked')
-    eq(st('ve-zdravem-tele'), 'timelocked')
     h.shot('grid-mnichov')
 
 
@@ -211,7 +210,7 @@ def t_choices(h):
     h.click('btn-confirm')
     h.page.wait_for_selector('[data-testid=done-title]')
     eq(h.text('done-points'), '10 BODŮ')
-    # counter (Mnichov ends at 14:45, so play it at noon)
+    # counter (Mnichov ends at 15:35, so play it at noon)
     h.open(now='12:00')
     h.js('Dante.nav("#/")'); h.page.wait_for_selector('[data-testid=screen-picker]')
     h.click('game-' + M)
@@ -980,7 +979,6 @@ def no_czech_walk(h, lang):
     chk('grid')
     h.go('#/compass'); h.page.wait_for_timeout(300); chk('compass')
     h.card('byt-ci-nebyt'); chk('locked card')
-    h.card('ve-zdravem-tele'); chk('time-locked card')
     h.click('debug-unlock'); h.page.wait_for_selector('[data-testid=btn-confirm]'); chk('debug unlock')
     h.unlock(*regular(M))
     for cid in regular(M):
@@ -999,7 +997,7 @@ def no_czech_walk(h, lang):
     h.go('#/kronika'); chk('kronika')
     h.click('kopt-0'); h.page.wait_for_selector('[data-testid=kfeedback]'); chk('kronika answered')
     h.js('Dante.st.kronika.finished = true; Dante.nav("#/end")'); h.page.wait_for_selector('[data-testid=screen-end]'); chk('end')
-    h.open(now='15:00', hash='#/grid'); chk('game over')
+    h.open(now='15:40', hash='#/grid'); chk('game over')
     for cid in [c for c in regular(P) if c not in regular(M)]:      # Praha-only cards
         h.js('Dante.loadGame("%s"); Dante.st.started = true; Dante.unlock("%s")' % (P, cid))
         h.card(cid); chk(cid)
