@@ -61,7 +61,8 @@
     var tg = toggle === 'compass'
       ? '<button type="button" class="hbtn" data-act="to-compass" data-testid="btn-compass" aria-label="' + t('toCompass') + '">' + I.compass(22, '#e2c47a', 1.7) + '</button>'
       : '<button type="button" class="hbtn" data-act="to-grid" data-testid="btn-grid" aria-label="' + t('toGrid') + '">' + I.grid(20, '#e2c47a', 1.7) + '</button>';
-    return '<header class="hdr"><div class="hdr-l"><button type="button" class="logo" data-act="to-picker" aria-label="' + t('toPicker') + '">D</button><span class="hdr-t">' + esc(D.gameText(D.game, 'title')) + '</span></div>' +
+    return '<header class="hdr"><div class="hdr-l"><button type="button" class="logo" data-act="to-picker" aria-label="' + t('toPicker') + '">D</button><span class="hdr-tw"><span class="hdr-t">' + esc(D.gameText(D.game, 'title')) + '</span>' +
+      (D.game.endsAt ? '<span class="hdr-e" data-testid="hdr-ends">' + t('gameEnds', { t: esc(D.game.endsAt) }) + '</span>' : '') + '</span></div>' +
       '<div class="hdr-r">' + D.flag() + tg + '</div></header>';
   };
   D.scoreRow = function () {
