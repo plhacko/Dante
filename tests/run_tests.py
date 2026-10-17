@@ -113,7 +113,8 @@ def t_grid(h):
 def t_grid_m(h):
     h.start(M, now='12:00')
     st = lambda c: h.t('card-' + c).get_attribute('data-status')
-    eq(h.page.locator('.gcard').count(), len(regular(M)))
+    eq(h.page.locator('.gcard').count(), len(regular(M)) + 1, 'all cards and the finale')
+    eq(st(finale(M)), 'open', 'Mnichov finale is visible from the start')
     eq(st('maugli'), 'near')
     eq(st('byt-ci-nebyt'), 'locked')
     h.shot('grid-mnichov')
