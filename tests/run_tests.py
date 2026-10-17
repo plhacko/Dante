@@ -210,7 +210,7 @@ def t_choices(h):
     h.click('btn-confirm')
     h.page.wait_for_selector('[data-testid=done-title]')
     eq(h.text('done-points'), '10 BODŮ')
-    # counter (Mnichov ends at 15:35, so play it at noon)
+    # counter (Mnichov ends at 15:40, so play it at noon)
     h.open(now='12:00')
     h.js('Dante.nav("#/")'); h.page.wait_for_selector('[data-testid=screen-picker]')
     h.click('game-' + M)

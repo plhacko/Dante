@@ -84,7 +84,8 @@
       return '<button type="button" class="gamecard" data-act="pick-game" data-id="' + esc(g.id) + '" data-testid="game-' + esc(g.id) + '" style="--bg:' + L.bg + '">' +
         '<span class="fr1" style="inset:5px"></span><span class="fr2" style="inset:8px"></span>' +
         '<span class="gc-med">' + I.flower(24, '#c9a24a', 1.2) + '</span>' +
-        '<span class="gc-txt"><span class="gc-t">' + esc(D.gameText(g, 'title')) + '</span><span class="gc-s">' + esc(sub) + '</span></span>' + I.next(20, '#e2c47a', 1.8) + '</button>';
+        '<span class="gc-txt"><span class="gc-t">' + esc(D.gameText(g, 'title')) + '</span>' +
+        (g.endsAt ? '<span class="gc-e" data-testid="game-ends">' + t('gameEnds', { t: esc(g.endsAt) }) + '</span>' : '') + '<span class="gc-s">' + esc(sub) + '</span></span>' + I.next(20, '#e2c47a', 1.8) + '</button>';
     }).join('');
     return D.flag('corner') + '<div class="picker"><div class="emblem"><span>D</span></div><h1 class="brand">DANTE</h1>' +
       '<div class="orn"><span></span>' + I.diamond(14, '#c9a24a', 1.6) + '<span></span></div>' +

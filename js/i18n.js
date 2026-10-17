@@ -10,7 +10,7 @@
     cs: {
       langSwitch: 'Jazyk: čeština. Přepnout na: {next}', langNames: { cs: 'čeština', en: 'angličtina', de: 'němčina' },
       // picker / team name
-      chooseGame: 'VYBERTE HRU', stations: '{n} stanovišť', games: 'Hry', stationsEnd: '{n} stanovišť · konec ve {t}',
+      chooseGame: 'VYBERTE HRU', stations: '{n} stanovišť', games: 'Hry', stationsEnd: '{n} stanovišť · konec ve {t}', gameEnds: 'Konec hry: {t}',
       yourTeam: 'VÁŠ TÝM', teamAsk: 'Jak se váš tým jmenuje?', teamPh: 'Název vašeho týmu', teamEmpty: 'Napište nejdřív název týmu.',
       start: 'ZAČÍT HRU', cont: 'POKRAČOVAT', newGame: 'NOVÁ HRA',
       newGameAsk: 'Opravdu začít znovu? Veškerý postup a body tohoto týmu se smažou.',
@@ -82,7 +82,7 @@
 
     en: {
       langSwitch: 'Language: English. Switch to: {next}', langNames: { cs: 'Czech', en: 'English', de: 'German' },
-      chooseGame: 'CHOOSE A GAME', stations: '{n} stations', games: 'Games', stationsEnd: '{n} stations · ends at {t}',
+      chooseGame: 'CHOOSE A GAME', stations: '{n} stations', games: 'Games', stationsEnd: '{n} stations · ends at {t}', gameEnds: 'Game ends: {t}',
       yourTeam: 'YOUR TEAM', teamAsk: 'What is your team called?', teamPh: 'Your team name', teamEmpty: 'Enter your team name first.',
       start: 'START GAME', cont: 'CONTINUE', newGame: 'NEW GAME',
       newGameAsk: 'Really start over? All progress and points of this team will be deleted.',
@@ -143,7 +143,7 @@
 
     de: {
       langSwitch: 'Sprache: Deutsch. Wechseln zu: {next}', langNames: { cs: 'Tschechisch', en: 'Englisch', de: 'Deutsch' },
-      chooseGame: 'SPIEL WÄHLEN', stations: '{n} Stationen', games: 'Spiele', stationsEnd: '{n} Stationen · Ende um {t}',
+      chooseGame: 'SPIEL WÄHLEN', stations: '{n} Stationen', games: 'Spiele', stationsEnd: '{n} Stationen · Ende um {t}', gameEnds: 'Spielende: {t}',
       yourTeam: 'EUER TEAM', teamAsk: 'Wie heißt euer Team?', teamPh: 'Name eures Teams', teamEmpty: 'Schreibt zuerst den Namen eures Teams.',
       start: 'SPIEL STARTEN', cont: 'WEITER', newGame: 'NEUES SPIEL',
       newGameAsk: 'Wirklich neu anfangen? Der ganze Fortschritt und alle Punkte dieses Teams werden gelöscht.',
