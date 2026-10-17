@@ -27,6 +27,8 @@
     return D.nowMinutes() >= D.minutesOf(D.game.endsAt);
   };
   D.isDone = function (id) { return !!D.st.done[id]; };
+  // unlocked with the debug corner: no location, start time or game-end checks for this card
+  D.debugged = function (id) { return D.st.geoSkipped.indexOf(id) >= 0; };
   D.allOthersDone = function () { return D.regular().every(function (x) { return D.isDone(x.id); }); };
   D.finaleVisible = function (pl) {
     var f = pl.p.from;
@@ -48,7 +50,7 @@
   D.statusOf = function (pl) {
     if (D.isDone(pl.id)) return 'done';
     if (pl.finale) return D.finaleVisible(pl) ? 'open' : 'hidden';
-    var un = D.st.unlocked.indexOf(pl.id) >= 0 || D.st.geoSkipped.indexOf(pl.id) >= 0;
+    var un = D.st.unlocked.indexOf(pl.id) >= 0 || D.debugged(pl.id);
     if (D.timeLocked(pl)) return 'timelocked';
     if (!pl.p.at) return 'open';
     if (D.isNear(pl)) return 'near';
@@ -56,7 +58,7 @@
   };
   // time-lock blocks until `from`; only the debug unlock bypasses it
   D.timeLocked = function (pl) {
-    return !!(pl.p.from && D.nowMinutes() < D.minutesOf(pl.p.from) && D.st.geoSkipped.indexOf(pl.id) < 0);
+    return !!(pl.p.from && D.nowMinutes() < D.minutesOf(pl.p.from) && !D.debugged(pl.id));
   };
   D.isPlayable = function (pl) { var s = D.statusOf(pl); return s === 'open' || s === 'near'; };
 

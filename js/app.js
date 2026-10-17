@@ -156,7 +156,7 @@
     var badge = '';
     if (s === 'done') badge = '<span class="badge seal-b">' + I.check(18, '#f1e6c8', 2.4) + '</span>';
     else if (s === 'near') badge = '<span class="badge near-b">' + I.pin(18, '#2a1b10', 2) + '</span>';
-    var dbg = D.st.geoSkipped.indexOf(pl.id) >= 0 ? '<span class="dbg-b">DEBUG</span>' : '';
+    var dbg = D.debugged(pl.id) ? '<span class="dbg-b">DEBUG</span>' : '';
     return '<button type="button" class="gcard' + (pl.finale ? ' gfin' : '') + '" data-act="open" data-id="' + esc(pl.id) + '" data-status="' + s + '" data-testid="card-' + esc(pl.id) + '" aria-label="' + pl.n + '. ' + esc(pl.card.title) + '" style="--bg:' + bg + ';--rule:' + rule + ';--rule2:' + rule2 + ';--ink:' + ink + '">' +
       '<span class="fr1"></span><span class="fr2"></span>' +
       (pl.finale ? '' : '<span class="gn gn-tl">' + pl.n + '</span><span class="gn gn-br">' + pl.n + '</span>') +

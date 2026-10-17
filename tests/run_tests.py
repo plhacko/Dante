@@ -166,6 +166,27 @@ def t_timelock(h):
     check(h.t('btn-confirm').count() == 1, 'confirm available at 20:00')
 
 
+@scenario('4 unlock', 'debug unlock makes the card playable: after the game ends, find without the target', (IPHONE,), geo=FAR)
+def t_debug_playable(h):
+    h.start(P, now='21:40', wait_pos=False)                      # Praha ends at 21:30
+    h.page.wait_for_selector('[data-testid=over-note]')
+    h.unlock('rubicon')                                          # unlocked the normal way: the game end still applies
+    h.card('rubicon')
+    eq(h.t('over-card').count(), 1, 'normal card after the end')
+    eq(h.t('btn-confirm').count(), 0)
+    h.card('mind-meld')
+    h.click('debug-unlock')
+    h.page.wait_for_selector('[data-testid=btn-confirm]')
+    eq(h.t('over-card').count(), 0, 'debug card is not blocked by the end')
+    h.click('btn-confirm'); h.page.wait_for_selector('[data-testid=done-title]')
+    eq(h.text('done-points'), bodu(CARDS['mind-meld']['points']))
+    h.card('cisarsky-poklad')                                    # find: far from the treasure spot
+    h.click('debug-unlock')
+    h.page.wait_for_selector('[data-testid=btn-find]')
+    h.click('btn-find'); h.page.wait_for_selector('[data-testid=done-title]')
+    eq(h.text('done-points'), bodu(CARDS['cisarsky-poklad']['points']))
+
+
 # ============================================================ 5-6 confirm / choices / counter
 @scenario('5-6 confirm', 'confirm card, bonus pending, undo', BOTH, geo=near(P, 'chvilka-filosofie'))
 def t_confirm(h):

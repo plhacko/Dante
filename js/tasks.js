@@ -4,7 +4,7 @@
   var D = window.Dante, esc = D.esc, I = D.icon, tr = D.t;
 
   function cur() { var pl = D.place(D.arg); return pl; }
-  function over() { return D.isOver(); }
+  function over() { var pl = cur(); return D.isOver() && !(pl && D.debugged(pl.id)); }   // a debug-unlocked card stays playable
   function rec(id) { return D.st.done[id]; }
 
 
@@ -260,7 +260,7 @@
     var pl = cur(); if (over()) return D.toast(tr('over'));
     var tg = pl.p.target, msg = D.$('#find-msg');
     function ok() { D.markDone(pl.id, pl.card.points || 0, pl.card.bonus ? pl.card.bonus.max : 0); D.render(); }
-    if (!tg) return ok();
+    if (!tg || D.debugged(pl.id)) return ok();
     el.disabled = true; msg.textContent = tr('locatingLow');
     D.Track.getPos({ timeout: 12000, maxAge: 0 }).then(function () {
       var d = D.distTo(tg);
@@ -374,7 +374,7 @@
   D.acts['fin-compass'] = function () { D.compassFocus = cur().id; D.nav('#/compass'); };
   D.acts['fin-start'] = function (el) {
     var pl = cur(), k = D.st.kronika, msg = D.$('#fin-msg');
-    if (!pl.p.at || (k && k.started) || D.st.geoSkipped.indexOf(pl.id) >= 0) return D.nav('#/kronika');
+    if (!pl.p.at || (k && k.started) || D.debugged(pl.id)) return D.nav('#/kronika');
     el.disabled = true; msg.textContent = tr('locatingLow');
     D.Track.getPos({ timeout: 12000, maxAge: 0 }).then(function () {
       var d = D.distTo(pl.p.at);
